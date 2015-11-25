@@ -1,0 +1,8 @@
+class BigsaladController < ApplicationController
+  def index
+   render 'bigsalad'
+  end
+
+  def show
+  end
+end

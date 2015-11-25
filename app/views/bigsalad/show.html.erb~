@@ -1,0 +1,13 @@
+<div class="container" >
+<p>
+  <h1 class="h2-picture product-edit-head" >סלט בריאות</h1>
+   </p>
+   <div class="thumbnail product-edit-box">
+       <%= image_tag  '100_0646.bmp', :width => "484px", :height => "400px", class: "img-thumbnail" %>
+      <div class="caption product-edit-text">        
+        <p>
+        בטח קרה גם לכם שבלעתם מאכל שלא הכרתם, ורק אחרי שבלעתם זיהיתם את טעמו.         
+         </p>
+      </div>
+    </div>
+</div>

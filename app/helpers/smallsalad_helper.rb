@@ -1,0 +1,2 @@
+module SmallsaladHelper
+end

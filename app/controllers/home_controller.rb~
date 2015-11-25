@@ -1,0 +1,37 @@
+class HomeController < ApplicationController
+  def index
+  render 'index'
+  end
+  
+  def bigsalad
+   render 'bigsalad'
+  end
+  
+  def bigsalad_edit
+      render 'bigsalad_edit'
+  end
+  
+  def smallsalad
+   render 'smallsalad'
+  end
+  
+  def smallsalad_edit
+   render 'smallsalad_edit'
+  end
+  
+  def sandwiches
+   render 'sandwiches'
+  end
+  
+    def sandwiches_edit
+   render 'sandwiches_edit'
+  end
+  
+  def soups
+    render 'soups'
+  end
+  
+  def soups_edit
+    render 'soups_edit'
+  end
+end

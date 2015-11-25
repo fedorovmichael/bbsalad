@@ -1,0 +1,2 @@
+module BigsaladHelper
+end
