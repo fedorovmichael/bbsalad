@@ -11,11 +11,10 @@
 // about supported directives.
 //
 //= require jquery
+//= require cycle2
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require turbolinks
-//= require cycle2
-//= require jquery.cycle2.shuffle
 //= require_tree .
 
 
