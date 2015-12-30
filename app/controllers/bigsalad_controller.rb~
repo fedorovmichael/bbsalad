@@ -1,8 +1,16 @@
 class BigsaladController < ApplicationController
-  def index
-   render 'bigsalad'
+  
+  def index  
+   @bigsalads = Product.where('product_type = ?','bigsalad')
+   render 'index'
   end
 
   def show
+  
+   @bigsalad = Product.find(params[:id]) #Product.where('id = ?', params[:id])
+     
+   render 'show'
   end
+   
+  
 end

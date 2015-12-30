@@ -1,7 +1,7 @@
 <div style="background-color:#229922; height:15px; width:100%"></div>
 <div class="container">
 <nav class="navbar navbar-custom navbar-static-top">
-   <a class="navbar-brand navbar-right" href="#" >ביג בן בר סלטים</a>
+  <%= link_to "ביג בן בר סלטים", root_path, class: 'navbar-brand navbar-right' %>  
   <div class="navbar-header">
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
       <span class="sr-only">Toggle navigation</span>
@@ -12,17 +12,19 @@
     
   </div>
   <div class="collapse navbar-collapse">
-     <form class="navbar-form navbar-left" role="search" style="padding-left:0;">
+     <%= form_tag(product_search_path, :method => 'get', class: "navbar-form navbar-left", id: "search_form", style: "padding-left:0;", role: "search") do %>
+     <!--<form class="navbar-form navbar-left" role="search" style="padding-left:0;">-->
       <div class="form-group">
-        <input class="form-control" placeholder="חפש" type="text">
+        <input class="form-control" placeholder="חפש" type="text" name="search" id="search">
       </div>
        <button type="submit" class="btn btn-default">חפש</button> 
-    </form>
+    <!--</form>-->
+    <%end%>
     <ul class="nav navbar-nav">     
-           <li><%= link_to "מרקים", soups_path %></li>
-           <li><%= link_to "כריכים", sandwiches_path %></li>
-           <li><%= link_to "סלטים קטני", smallsalad_index_path %></li>
-           <li><%= link_to "סלטים גדולים", bigsalad_index_path %></li>
+           <li><%= link_to "מרקים", product_index_path(:product_type => 'soups') %></li>
+           <li><%= link_to "כריכים", product_index_path(:product_type => 'sandwiches') %></li>
+           <li><%= link_to "סלטים קטני", product_index_path(:product_type => 'smallsalad') %></li>
+           <li><%= link_to "סלטים גדולים", product_index_path(:product_type => 'bigsalad') %></li>
            <li class="active"><%= link_to "עמוד הבית", root_path %></li>
     </ul>
   </div>

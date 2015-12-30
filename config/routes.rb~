@@ -1,10 +1,20 @@
 Rails.application.routes.draw do
 
+get 'product/index'
+get 'product/show'
+get 'product/search'
+
 root 'home#index'
 resources :soups
 resources :sandwiches
 resources :smallsalad
 resources :bigsalad
+
+get 'admin/index'
+post 'admin/index' => 'admin#create'
+post 'admin/create_product' => 'admin#create_product'
+post 'admin/create_user' => 'admin#create_user'
+
 
 #  get 'soups/index'
 
