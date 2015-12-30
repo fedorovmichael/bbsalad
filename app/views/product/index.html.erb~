@@ -1,0 +1,28 @@
+<div class="container">
+  <h1 class="h2-picture">סלטים קטנים</h1>
+     <% @products.in_groups(RowCounts(@products), false) do |row|     
+         row.each do |p|
+         
+            picture = ''
+            if p.pictures.empty?
+               picture = "100_0646.bmp"
+            else
+               picture = p.pictures[0].link
+            end %>
+                    
+            <div class="col-sm-6 col-md-3">
+             <div class="thumbnail">
+                <%= image_tag picture , :width => "242px", :height => "200px", class: "img-thumbnail" %>
+               <div class="caption">
+                 <p class="h3-product"><%= p.name %></p>
+                 <p><%= p.overview %></p>                     
+                 <p>
+                  <span class="pull-left price" style="margin-right:5px;">ש"ח</span>
+                  <span class="pull-left price"><%= p.price.to_i %></span>
+                  <%= link_to "פרטים", product_show_path(id: p.id), class: "button" %></p>
+               </div>
+             </div>
+           </div>
+         <% end %>
+       <% end %>
+</div>

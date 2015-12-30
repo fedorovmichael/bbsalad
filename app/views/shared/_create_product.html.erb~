@@ -1,0 +1,118 @@
+
+  <% 
+      f = Dir.glob("#{Rails.root}/app/assets/images/*") 
+      @listImages = f.map{|file| File.basename(file, File.extname(file))}
+  %>
+  <% 
+      @product = Product.new
+      @product.pictures.build
+      #@image = Picture.new
+  %>
+  <%= form_for @product, url: { controller: 'admin', action: 'create_product' } do |f| %>
+   
+   <div class="row">
+      <div class="span6 offset3">
+      <%= f.label :name, :style => 'width:100px; text-align:left;' %>
+      <%= f.text_field :name %>
+      </div>
+   </div>
+      
+   <div class="row">
+      <div class="span6 offset3">
+      <%= f.label :overview, :style => 'width:100px; text-align:left;' %>
+      <%= f.text_field :overview %>
+      </div>
+   </div>     
+
+
+ <div class="row">
+      <div class="span6 offset3">
+      <%= f.label :price, :style => 'width:100px; text-align:left;' %>
+      <%= f.text_field :price %>
+      </div>
+   </div>
+      
+   <div class="row">
+      <div class="span6 offset3">
+      <%= f.label :product_type, 'Type', :style => 'width:100px; text-align:left;' %>
+      <select style="width:179px;" id='product_type' name='product_type'>                            
+               <option>bigsalad</option>
+               <option>smallsalad</option>
+               <option>soups</option>
+               <option>sandwiches</option>       
+         </select>     
+     </div>
+   </div>     
+
+ <div class="row">
+      <div class="span6 offset3">
+      <%= f.label :favorits, :style => 'width:100px; text-align:left;' %>
+      <%= f.text_field :favorits %>
+      </div>
+   </div>
+ 
+   <div class="row">
+      <div class="span6 offset3">
+      <%= f.label :new, :style => 'width:100px; text-align:left;' %>
+      <%= f.text_field :new %>
+      </div>
+   </div>  
+
+   <%= f.fields_for :pictures do |i| %>   
+
+      <div class="row">
+         <div class="span6 offset3">
+         <%= i.label :link, :style => 'width:100px; text-align:left;' %>
+         <select style="width:179px;" multiple='multiple' id='pictures' name='pictures[]'>
+            <option></option>
+            <% @listImages.each do |i| %>         
+               <option><%= i %></option>         
+            <%end%>
+         </select>       
+         
+      </div>         
+      </div>
+      
+      <div class="row">
+         <div class="span6 offset3">
+            <%= i.label :name, :style => 'width:100px; text-align:left;' %>
+            <%= i.text_field :name %>
+         </div>
+      </div>
+      
+      
+      <div class="row">
+         <div class="span6 offset3">
+            <%= i.label :position, :style => 'width:100px; text-align:left;' %>
+            <%= i.text_field :position %>
+         </div>
+      </div>
+       
+    <%end%>
+ 
+    <div class="row">
+      <div class="span6 offset3">      
+      <%= f.submit 'Create', :style => 'width:179px; margin-left:103px;' %>
+      </div>
+   </div>   
+         
+   <% end %>
+
+
+<!--
+#= render partial: "shared/email"
+
+
+    t.string   "name"
+    t.string   "overview"
+    t.float    "price"
+    t.string   "type"
+    t.boolean  "new"
+    t.boolean  "favorits"
+    
+    
+    <div class="input-group input-group-lg">
+  <span class="input-group-addon">@</span>
+  <input type="text" class="form-control" placeholder="Username">
+</div>
+    -->

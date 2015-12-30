@@ -1,0 +1,47 @@
+<h2>Admin Create</h2>
+<script>
+   function partialHandler(divId)
+   {
+   
+      if(divId == 'divProduct')
+      {
+         $('#divProduct').show();
+         $('#divUser').hide();
+      }
+      else
+      {
+         $('#divUser').show();
+         $('#divProduct').hide();
+      }
+         
+   }
+</script>
+<div class='container'>
+   <ul class="nav navbar-nav">
+      <li><a href='#' onClick='partialHandler("divProduct")'>Create product</a></li>
+      <li><a href="#" onClick='partialHandler("divUser")' >Create user</a></li>
+   </ul>
+</div>
+
+<hr style='magin-bottom:20px;margin-top:20px;border:solid 1px black;' />
+
+<% if flash[:success] %>
+   <div class="alert alert-success">
+      <%= flash[:success] %>
+   </div>
+<% end %>
+<% if flash[:error] %>
+   <div class="alert alert-danger">
+      <%= flash[:error] %>
+   </div>
+<% end %>
+
+<div id='divProduct' class='container' style='display:none;'>
+   <%= render partial: "shared/create_product" %>
+</div>
+
+<div id='divUser' class='container' style='display:none;'>
+   <%= render partial: "shared/create_user" %>
+</div>
+
+

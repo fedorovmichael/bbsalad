@@ -1,0 +1,27 @@
+<h2>Admin</h2>
+  
+   <%= form_for(@user, url: admin_index_path) do |f| %>
+   
+   <div class="row">
+      <div class="span6 offset3">
+      <%= f.label :name, :style => 'width:100px; text-align:left;' %>
+      <%= f.text_field :name %>
+      </div>
+   </div>
+      
+   <div class="row">
+      <div class="span6 offset3">
+      <%= f.label :password, :style => 'width:100px; text-align:left;' %>
+      <%= f.text_field :password %>
+      </div>
+   </div>
+      
+   <div class="row">
+      <div class="span6 offset3">      
+      <%= f.submit 'Login', :style => 'width:179px; margin-left:103px;' %>
+      </div>
+   </div>  
+         
+   <% end %>
+
+   

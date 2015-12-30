@@ -1,0 +1,4 @@
+class ChangeProductColumnNameType < ActiveRecord::Migration
+  def change
+  end
+end

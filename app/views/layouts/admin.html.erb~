@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin panel</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body style="direction:ltr;">
+
+<p style="color:red"><%= flash[:error] %></p>
+<p style="color:green"><%= flash[:success] %></p>
+
+   <div class="container" style="height:100%; text-align:center;">
+      <%= yield %>
+   </div>  
+</body> 
+</html>
