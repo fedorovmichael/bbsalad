@@ -1,4 +1,42 @@
 
+  <script>
+   function addPictureRow()
+   {
+   
+      var link = $("#secPicture").val();
+      var name = $("#txtName").val();
+      var position = $("#txtPosition").val();
+      
+      var ind = $('#pictures >tbody >tr').length;
+      var rowId = Math.random().toString(36).substr(2);
+      
+      
+      var newRowContent ="<tr id='"+ rowId +"'>"+
+      "<td><label id='product_pictures_attributes_"+ind+"_link' name='product[pictures_attributes]["+ind+"][link]'>"+ link +"</label></td>"+
+      "<td><label id='product_pictures_attributes_"+ind+"_name' name='product[pictures_attributes]["+ind+"][name]'>"+ name +"</label></td>"+
+      "<td><label id='product_pictures_attributes_"+ind+"_position' name='product[pictures_attributes]["+ind+"][position]'>"+ position +"</label></td>"+
+      "<td><a href='javascript:deletePictureRow("+ "\"" + rowId + "\"" + ");'><span class='glyphicon glyphicon-minus' style='color:#000;'></span></a></td></tr>";
+      
+      $("#pictures tbody").append(newRowContent);
+      
+      //<a href="javascript:deletePictureRow("+ind+");"><span class="glyphicon glyphicon-minus" style="color:#000;"></span></a>
+      
+      //$('table#myTable tr:last').index() + 1
+
+      //product_pictures_attributes_0_position - id
+      //product[pictures_attributes][0][position] - name
+      
+      //picture, txtName, txtPosition
+   }
+   
+   function deletePictureRow(id)
+   {
+      $("#pictures tr[id='"+ id +"']").remove();
+   }
+  
+  </script>
+  
+  
   <% 
       f = Dir.glob("#{Rails.root}/app/assets/images/*") 
       @listImages = f.map{|file| File.basename(file, File.extname(file))}
@@ -6,25 +44,22 @@
   <% 
       @product = Product.new
       @product.pictures.build
-      #@image = Picture.new
+      @pictures = Picture.new
   %>
-  <%= form_for @product, url: { controller: 'admin', action: 'create_product' } do |f| %>
+  <%= form_for @product, url: { controller: 'admin', action: 'create_product' }, :html => {:style => 'text-align:left'} do |f| %>
    
    <div class="row">
-      <div class="span6 offset3">
+      <div class=" ">
       <%= f.label :name, :style => 'width:100px; text-align:left;' %>
       <%= f.text_field :name %>
       </div>
-   </div>
-      
+   </div>      
    <div class="row">
       <div class="span6 offset3">
       <%= f.label :overview, :style => 'width:100px; text-align:left;' %>
       <%= f.text_field :overview %>
       </div>
-   </div>     
-
-
+   </div>
  <div class="row">
       <div class="span6 offset3">
       <%= f.label :price, :style => 'width:100px; text-align:left;' %>
@@ -42,9 +77,9 @@
                <option>sandwiches</option>       
          </select>     
      </div>
-   </div>     
-
- <div class="row">
+   </div>
+    
+   <div class="row">
       <div class="span6 offset3">
       <%= f.label :favorits, :style => 'width:100px; text-align:left;' %>
       <%= f.text_field :favorits %>
@@ -58,45 +93,55 @@
       </div>
    </div>  
 
-   <%= f.fields_for :pictures do |i| %>   
-
+   <div class="row">
+      <div class="span6 offset3">      
+      <%= f.submit 'Create', :style => 'width:179px;' %>
+      </div>
+   </div>         
+ <% end %>
+ 
+ <%= form_for @pictures, url: { controller: 'admin', action: 'add_picture_to_product' }, :html => {:style => 'text-align:left'} do |p| %>
       <div class="row">
-         <div class="span6 offset3">
-         <%= i.label :link, :style => 'width:100px; text-align:left;' %>
-         <select style="width:179px;" multiple='multiple' id='pictures' name='pictures[]'>
+         <div class="span6 offset3" style="margin-top:20px; margin-bottom:10px;">
+         <%= p.label :link %>
+         <select style="width:179px;" id='secPicture' name='secPicture'>
             <option></option>
             <% @listImages.each do |i| %>         
                <option><%= i %></option>         
             <%end%>
-         </select>       
-         
-      </div>         
+         </select>
+            <label for="txtName">Name</label>
+      		<input type="text" id="txtName"></input>
+       	   <label for="txtPosition">Position</label>
+            <input type="text" id="txtPosition"></input>
+            <%= p.submit '+', :style => 'width:20px;' %>
+       </div>         
       </div>
-      
-      <div class="row">
-         <div class="span6 offset3">
-            <%= i.label :name, :style => 'width:100px; text-align:left;' %>
-            <%= i.text_field :name %>
-         </div>
-      </div>
-      
-      
-      <div class="row">
-         <div class="span6 offset3">
-            <%= i.label :position, :style => 'width:100px; text-align:left;' %>
-            <%= i.text_field :position %>
-         </div>
-      </div>
-       
+         <div class="row">
+      <div class="span6 offset3">
+      <table id='pictures' name='pictures[]' class="table" style="width:700px; table-layout: fixed;">
+         <thead>
+            <tr>
+               <th>Link</th>
+               <th>Name</th>
+               <th>Position</th>
+               <th>Button</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td><label id="product_pictures_0_link" name="product[pictures][0][link]">link1</label></td>
+               <td><label id="product_pictures_0_name" name="product[pictures][0][name]">name1</label></td>
+               <td><label id="product_pictures_0_position" name="product[pictures][0][position]">position1</label></td>
+            </tr>
+         </tbody>
+      </table>
+     </div>
+    </div> 
     <%end%>
+    
  
-    <div class="row">
-      <div class="span6 offset3">      
-      <%= f.submit 'Create', :style => 'width:179px; margin-left:103px;' %>
-      </div>
-   </div>   
-         
-   <% end %>
+
 
 
 <!--

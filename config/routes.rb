@@ -1,20 +1,38 @@
 Rails.application.routes.draw do
 
+root 'home#index'
+
 get 'product/index'
 get 'product/show'
 get 'product/search'
 
-root 'home#index'
+get      'account/index'
+post     'account/create' => 'account#create'
+delete   'account/logout' => 'account#destroy' 
+
+#get      'admin/index'
+#get      'admin/new' => 'admin#new'
+#post     'admin' => 'admin#create'
+#get      'admin/:id/edit' => 'admin#edit', as: "admin_edit" 
+#delete   'admin/delete/:id' => 'admin#destroy', as: "admin_delete" 
+#patch    'admin/update/:id' => 'admin#update', as: "admin_update"  
+#post     'admin/create_product' => 'admin#create_product'
+#post     'admin/create_user' => 'admin#create_user'
+
+resources :admin
+post     'admin/menu_handler' => 'admin#menu_handler'
+get      'admin/menu_handler' => 'admin#menu_handler'
+
+
+post     'picture/picture_handler' => 'picture#picture_handler', as: 'assign_picture'
+resources :picture
+
+
+
 #resources :soups
 #resources :sandwiches
 #resources :smallsalad
 #resources :bigsalad
-
-get 'admin/index'
-post 'admin/index' => 'admin#create'
-post 'admin/create_product' => 'admin#create_product'
-post 'admin/create_user' => 'admin#create_user'
-
 
 #  get 'soups/index'
 

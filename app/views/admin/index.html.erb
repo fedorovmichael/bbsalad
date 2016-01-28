@@ -1,27 +1,37 @@
-<h2>Admin</h2>
-  
-   <%= form_for(@user, url: admin_index_path) do |f| %>
-   
-   <div class="row">
-      <div class="span6 offset3">
-      <%= f.label :name, :style => 'width:100px; text-align:left;' %>
-      <%= f.text_field :name %>
-      </div>
-   </div>
-      
-   <div class="row">
-      <div class="span6 offset3">
-      <%= f.label :password, :style => 'width:100px; text-align:left;' %>
-      <%= f.text_field :password %>
-      </div>
-   </div>
-      
-   <div class="row">
-      <div class="span6 offset3">      
-      <%= f.submit 'Login', :style => 'width:179px; margin-left:103px;' %>
-      </div>
-   </div>  
-         
-   <% end %>
+<h2>List products</h2>   
 
+<p style="text-align:left;"><%= link_to 'New', new_admin_path %></p>
+
+<% if @products.empty?%>
+   <label>No products</label>
+<%else%>
+   <table class='table' style="text-align:left;">
+      <thead>
+         <tr>
+            <th>Name</th>
+            <th>Overview</th>
+            <th>Price</th>
+            <th>Product type</th>
+            <th>New</th>
+            <th>Favorits</th>
+         </tr>
+         </thead>
+         <tbody>
+            <%@products.each do |p|%>
+               <tr>
+                  <td><%= p.name %></td>
+                  <td><%= p.overview %></td>
+                  <td><%= p.price %></td>
+                  <td><%= p.product_type %></td>
+                  <td><%= p.new %></td>
+                  <td><%= p.favorits %></td>
+                  <td><%= link_to 'Edit', edit_admin_path(p.id) %></td>
+                  <td><%= link_to "Delete", url: { controller: 'admin', action: 'destroy' }, method: :delete, data:{ confirm: "Are you sure?" }  %></td>
+               </tr>
+            <%end%>
+         </tbody>
    
+   </table>
+<%end%>
+   
+

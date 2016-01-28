@@ -6,8 +6,9 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body style="direction:ltr;">
+<body style="direction:ltr;">   
    <div class="container" style="height:100%; text-align:center;">
+   <%= render 'layouts/admin_header'%>
       <%= yield %>
    </div>  
 </body> 

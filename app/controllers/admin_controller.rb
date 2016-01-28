@@ -1,31 +1,86 @@
 class AdminController < ApplicationController
 
-#   before_filter :check_if_admin
    layout "admin"
+   before_filter :validate_admin
+
 
   def index
   
-   @user = User.new
-  
+   @products = Product.all   
+   @products = @products.includes(:pictures)   
+
    render 'index'
+
+  end
+  
+  def show
+  end
+  
+  def new
+  
+   @product = Product.new
+   @picture = Array.new
+  
+   render 'new'
+  
   end
   
   def create
-  
-   render 'create'
+   
+   @product = Product.create(unlock_params(:product))
+   
+   if @product.errors.empty?
+      @picture = Array.new
+      redirect_to edit_admin_path(@product)
+   elsif
+      render 'create'
+   end  
   
   end
   
-  def edit
+  def edit 
+
+   @product = Product.find(params[:id])if params[:id]
+   @pictures = Picture.where("product_id = ?", params[:id])if params[:id]
+  
+   if @pictures.empty?
+      @pictures = Array.new
+   end
+   
    render 'edit'
+   
   end
+  
+
+  def update
+	 
+	  @product = Product.find(params[:id])
+	  @product.update_attributes(unlock_params(:product))
+
+	  if @product.errors.empty?
+	     flash.now[:success] = "Updated product successfully"    
+	 else
+	     flash.now[:error] = "Failed to update product"	    
+	  end
+	  
+	  redirect_to edit_admin_path(@product)
+	  
+	end
+    	
+	def destroy
+	
+    @product = Product.find(params[:id])
+    @product.destroy
+    redirect_to action: "index"
+	
+	end
 
   def create_product
       
-      @product = Product.create(unlock_params(:product))
-      
+      @product = Product.create(unlock_params(:product))   
+        
       if @product.errors.empty?      
-         flash.now[:success] = "New item saved successfully"     
+         flash.now[:success] = "New item saved successfully"
          render 'create'         
       else
          flash.now[:error] = "Failed to save item"
@@ -40,19 +95,19 @@ class AdminController < ApplicationController
   
   end
   
-  private
   
-  def unlock_params(object)
-  	
-	   params.require(object).permit!
-	
-	end
+  def menu_handler
+  
+      case params[":item"]
+      when "product"
+        puts render partial: "shared/create_product"
+      when "user"
+        puts render partial: "shared/create_user"
+      else
+        puts render "create"
+      end  
+  
+  end
 
 end
-
-
-
-
-# f = Dir.glob("#{Rails.root}/app/assets/images/*")
-#f.map{|file| File.basename(file, File.extname(file))}
 

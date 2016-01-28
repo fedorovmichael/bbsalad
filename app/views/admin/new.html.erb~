@@ -1,0 +1,13 @@
+<h2>Create product</h2>
+<%=form_for @product, url: { controller: 'admin', action: 'create' }, :html => {:style => 'text-align:left; margin-top:40px;'}  do |f| %>
+
+   <%= render partial: 'shared/form_product', locals: {f: f} %>
+
+   
+   <div class="row">
+     <div class="span6 offset3">      
+      <%= f.submit 'Create', :style => 'width:179px;' %>
+     </div>
+   </div>    
+
+<%end%>

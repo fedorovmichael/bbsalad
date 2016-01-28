@@ -1,0 +1,42 @@
+   <div class="row">
+      <div class="span6 offset3">
+      <%= f.label :name, :style => 'width:100px; text-align:left;' %>
+      <%= f.text_field :name %>
+      </div>
+   </div>      
+   <div class="row">
+      <div class="span6 offset3">
+      <%= f.label :overview, :style => 'width:100px; text-align:left;' %>
+      <%= f.text_field :overview %>
+      </div>
+   </div>
+ <div class="row">
+      <div class="span6 offset3">
+      <%= f.label :price, :style => 'width:100px; text-align:left;' %>
+      <%= f.text_field :price %>
+      </div>
+   </div>
+      
+   <div class="row">
+      <div class="span6 offset3">
+      <%= f.label :product_type, 'Type', :style => 'width:100px; text-align:left;' %>
+      <%= f.collection_select(:product_type, ProductType.all, :name, :name, {:selected => @product.product_type}, {:style => 'width:179px;'} )%>
+    
+     </div>
+   </div>
+    
+   <div class="row">
+      <div class="span6 offset3">
+      <%= f.label :favorits, :style => 'width:100px; text-align:left;' %>
+      <%= f.text_field :favorits %>
+      </div>
+   </div>
+ 
+   <div class="row">
+      <div class="span6 offset3">
+      <%= f.label :new, :style => 'width:100px; text-align:left;' %>
+      <%= f.text_field :new %>
+      </div>
+   </div>  
+
+        

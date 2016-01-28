@@ -1,0 +1,56 @@
+  <%       
+      @listImages = get_pictures_names
+  %>
+ <%= form_for :picture, url: { controller: 'picture', action: 'picture_handler' }, :html => {:style => 'text-align:left'} do |p| %>
+      <div class="row">
+         <div class="span6 offset3" style="margin-top:20px; margin-bottom:10px;">
+         <%= p.label :link %>
+         <select style="width:179px;" id='picture_link' name='picture[link]'>
+            <option></option>
+            <% @listImages.each do |i| %>         
+               <option><%= i %></option>         
+            <%end%>
+         </select>
+            <%= p.label :name %>
+            <%= p.text_field :name %>
+            <%= p.label :position %>
+            <%= p.text_field :position %>
+            <%= p.hidden_field :product_id, :value => @product.id %> 
+            <%= p.submit '+', name: 'addPicture', :style => 'width:20px;' %>
+       </div>         
+      </div>
+         <div class="row">
+      <div class="span6 offset3">
+      <table id='pictures' name='pictures[]' class="table" style="width:700px; table-layout: fixed;">
+         <thead>
+            <tr>
+               <th>Link</th>
+               <th>Name</th>
+               <th>Position</th>
+               <th>Button</th>
+            </tr>
+         </thead>
+         <tbody>
+         <%if @pictures.empty?%>
+            <tr>
+               <td><label>no assign pictures</label></td>
+            </tr>
+         <%else%>
+           <%@pictures.each do |pic| %>
+               <tr>
+                  <td><%= pic.link %></td>
+                  <td><%= pic.name %></td>
+                  <td><%= pic.position %></td>
+                  <td>
+                     <%= p.hidden_field :picture_id, :value => pic.id %>
+                     <%= p.submit '-', name: 'removePicture', :style => 'width:20px;' %>
+                  </td>
+               </tr>
+            <%end%>
+         <%end%>
+         </tbody>
+      </table>
+     </div>
+    </div> 
+    <%end%>
+    
