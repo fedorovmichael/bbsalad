@@ -2,6 +2,7 @@ class ProductController < ApplicationController
   def index
       @products = Product.where('product_type = ?',params[:product_type])
       @products = @products.includes(:pictures)      
+      page_caption
       #@products = valid_picture(@products)      
       render 'index'
   end
@@ -42,6 +43,22 @@ class ProductController < ApplicationController
   
   def create_picture
       Picture.new(name: '100_0646', link: '100_0646.bmp', position: '1', product_id: params[:id])
+  end
+  
+  def page_caption
+      
+      @current_caption = ''
+      case params[:product_type]
+      when 'soups'
+        @current_caption = 'מרקים'
+      when 'sandwiches'
+        @current_caption = 'כריכים'
+      when 'smallsalad'
+        @current_caption = 'סלטים קטנים'
+      when 'bigsalad'
+        @current_caption = 'סלטים גדולים'
+      end
+      
   end
   
 end

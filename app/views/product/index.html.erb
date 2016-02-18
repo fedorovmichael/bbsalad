@@ -1,18 +1,10 @@
 <div class="container">
-  <h1 class="h2-picture">סלטים קטנים</h1>
+  <h1 class="h2-picture"><%= @current_caption %></h1>
      <% @products.in_groups(RowCounts(@products), false) do |row|     
-         row.each do |p|
-         
-            picture = ''
-            if p.pictures.empty?
-               picture = "100_0646.bmp"
-            else
-               picture = p.pictures[0].link
-            end %>
-                    
+         row.each do |p| %>   
             <div class="col-sm-6 col-md-3">
              <div class="thumbnail">
-                <%= image_tag picture , :width => "242px", :height => "200px", class: "img-thumbnail" %>
+                <%= image_tag get_picture_link(p.pictures) , :width => "242px", :height => "200px", class: "img-thumbnail" %>
                <div class="caption">
                  <p class="h3-product"><%= p.name %></p>
                  <p><%= p.overview %></p>                     
