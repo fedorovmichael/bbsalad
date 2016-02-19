@@ -50,7 +50,12 @@ group :development do
   gem 'spring'
   
   # Use sqlite3 as the database for Active Record
-  gem 'sqlite3'  
+  gem 'sqlite3'
+  
+  gem 'capistrano', '~> 3.2.1'
+  gem 'capistrano-rvm', '~> 0.1.1'
+  gem 'capistrano-bundler', '~> 1.1.3'
+  gem 'capistrano-rails', '~> 1.1.2'  
 end
 
 group :production do
