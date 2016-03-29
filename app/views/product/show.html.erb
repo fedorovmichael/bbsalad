@@ -1,16 +1,10 @@
-         <% picture = ''
-            if @product.pictures.empty?
-               picture = "100_0646.bmp"
-            else
-               picture = @product.pictures[0].link
-            end %>
 
 <div class="container" >
    <p>
      <h1 class="h2-picture product-edit-head" ><%= @product.name %></h1>
   </p>
   <div class="thumbnail product-edit-box">
-       <%= image_tag  picture, :width => "484px", :height => "400px", class: "img-thumbnail" %>
+       <%= image_tag  get_picture_link(@product.pictures), :width => "484px", :height => "400px", class: "img-thumbnail" %>
       <div class="product-edit-text">        
         <p>
             <%= @product.overview %>

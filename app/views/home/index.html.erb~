@@ -1,5 +1,6 @@
 <script>
    $('.cycle-slideshow').cycle();
+   setBodyHeight();
 </script>
 
 <div class="span12 centered-text" style="height:100%;">

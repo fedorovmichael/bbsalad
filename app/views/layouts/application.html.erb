@@ -8,9 +8,34 @@
 </head>
 <body>
 <%= render 'layouts/header'%>
-<div class="container" style="height:100%;">
-<%= yield %>
+<div id="divContant" class="container">
+   <%= yield %>
 </div>
 <%= render 'layouts/footer' %>   
 </body> 
 </html>
+
+<script>
+
+   function setBodyHeight(){
+   
+            try{
+             //var h = ($("body").height()-397) + "px"; //((window.innerHeight)-397) + "px";
+             //var h1 = ((window.innerHeight)-397) + "px";             
+             var h3 = ($(document).height()-616) + "px";
+             //var h4 = ($(window).height()-397) + "px";
+                 
+            $("#divContant").css("height", h3);
+            
+            //alert(h3 +", "+ h4);
+      }
+      catch(e){}
+   
+   }
+   $(document).ready(function(){
+   
+
+   
+   });
+
+</script>

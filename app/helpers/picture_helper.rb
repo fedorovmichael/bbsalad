@@ -1,8 +1,9 @@
 module PictureHelper
 
    def get_pictures_names
-      f = Dir.glob("#{Rails.root}/app/assets/images/*") 
-      f.map{|file| File.basename(file, File.extname(file))}
+      f = Dir.glob("#{Rails.root}/app/assets/images/product/*") 
+      f.map{|file| File.basename(file)}
+      #f.map{|file| File.basename(file, File.extname(file))} #without extention name            
    end
    
    def get_picture_link(pictures, index = 0)
@@ -13,7 +14,7 @@ module PictureHelper
        end
        
        if pictures.empty?
-         picture = "100_0646.bmp"
+         picture = "salad.jpg"
        else         
          picture = pictures[index].link
        end

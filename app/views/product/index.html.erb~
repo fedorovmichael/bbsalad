@@ -1,3 +1,7 @@
+<script>   
+   //setBodyHeight();
+</script>
+
 <div class="container">
   <h1 class="h2-picture"><%= @current_caption %></h1>
      <% @products.in_groups(RowCounts(@products), false) do |row|     

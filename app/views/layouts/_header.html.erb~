@@ -1,18 +1,26 @@
 <div style="background-color:#229922; height:15px; width:100%"></div>
 <div class="container">
 <nav class="navbar navbar-custom navbar-static-top">
-  <%= link_to "ביג בן בר סלטים", root_path, class: 'navbar-brand navbar-right' %>  
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+  <!--<%= link_to "ביג בן בר סלטים", root_path, class: 'navbar-brand navbar-right' %> -->   
+ 
+  <div class="navbar-header" style="float:right;">   
+    <!--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
       <span class="sr-only">Toggle navigation</span>
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
-    </button>
-    
+    </button> -->
+    <%= image_tag 'logo7.png', style: "width:220px; height:90px; padding-top: 0px;", class: "navbar-brand navbar-right" %>
+    <br/>
+    <ul type="none" style="font-size:10pt;">
+      <li><span>יצחק שדה 34, תל אביב</span></li>
+      <li><span>058-7-267676</span></li>
+    </ul>
+      <!--<a class="navbar-brand navbar-right" href="/"></a>
+    <%= image_tag 'la_cipolla_logo.jpg', :width => "250px", :height => "110px;"%>  -->           
   </div>
   <div class="collapse navbar-collapse">
-     <%= form_tag(product_search_path, :method => get, class: "navbar-form navbar-left", id: "search_form", style: "padding-left:0;", role: "search") do %>
+     <%= form_tag(product_search_path, :method => 'get', class: "navbar-form navbar-left", id: "search_form", style: "padding-left:0;", role: "search") do %>
      <!--<form class="navbar-form navbar-left" role="search" style="padding-left:0;">-->
       <div class="form-group">
         <input class="form-control" placeholder="חפש" type="text" name="search" id="search">

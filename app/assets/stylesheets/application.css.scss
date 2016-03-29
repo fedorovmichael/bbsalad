@@ -1,9 +1,14 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+html{
+   height:100%;   
+}
+
 body{
    direction: rtl;   
    background: #F5F0DA none repeat scroll 0% 0%;
+   height:100%;
 }
 
 .navbar-custom {
@@ -21,6 +26,7 @@ body{
    line-height: 18px;
    text-transform: uppercase;
    padding-top: 30px;
+   font-style: italic;
   	
 }
 .navbar-custom .navbar-nav > .active > a, .navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus {
@@ -96,6 +102,7 @@ h1,h2,h3,h4,h5 {
 	box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.2);
 }
 
+
 .footer-nav-center{ 
   margin: 0 auto;
   display: table;
@@ -155,5 +162,23 @@ h1,h2,h3,h4,h5 {
    margin-top: 10px;
 }
 
+.logo-a {
+    background: rgba(0, 0, 0, 0) url("logo5.png") no-repeat scroll 0 0;
+    overflow: hidden;
+    text-indent: -99em;
+    width: 130px;
+    height: 60px;
+}
+
+#divContant
+{
+   min-height: 100%;
+   height: auto !important;
+   padding: 10px;
+    min-height: -webkit-calc(100% - 221px);     /* Chrome */
+    min-height: -moz-calc(100% - 221px);     /* Firefox */
+    min-height: calc(100% - 221px); 
+   
+}
 
 

@@ -5,6 +5,11 @@
                picture = @product.pictures[0].link
             end %>
 
+
+<script>   
+   //setBodyHeight();
+</script>
+
 <div class="container" >
    <p>
      <h1 class="h2-picture product-edit-head" ><%= @product.name %></h1>
