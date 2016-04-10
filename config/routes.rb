@@ -27,7 +27,7 @@ get      'admin/menu_handler' => 'admin#menu_handler'
 post     'picture/picture_handler' => 'picture#picture_handler', as: 'assign_picture'
 resources :picture
 
-
+resources :slideshow
 
 #resources :soups
 #resources :sandwiches

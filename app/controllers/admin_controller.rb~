@@ -8,17 +8,12 @@ class AdminController < ApplicationController
   
    @products = Product.all   
    @products = @products.includes(:pictures)   
-  
-
-   
-   #render layout "login"
 
    render 'index'
-   #render :layout => 'standard'
+
   end
   
   def show
-  
   end
   
   def new
@@ -47,7 +42,6 @@ class AdminController < ApplicationController
 
    @product = Product.find(params[:id])if params[:id]
    @pictures = Picture.where("product_id = ?", params[:id])if params[:id]
-
   
    if @pictures.empty?
       @pictures = Array.new
@@ -57,8 +51,8 @@ class AdminController < ApplicationController
    
   end
   
-  	# /product/1 PUT	
-	def update
+
+  def update
 	 
 	  @product = Product.find(params[:id])
 	  @product.update_attributes(unlock_params(:product))
@@ -70,9 +64,9 @@ class AdminController < ApplicationController
 	  end
 	  
 	  redirect_to edit_admin_path(@product)
+	  
 	end
-  
-  	# /product/1 DELETE
+    	
 	def destroy
 	
     @product = Product.find(params[:id])
@@ -84,11 +78,9 @@ class AdminController < ApplicationController
   def create_product
       
       @product = Product.create(unlock_params(:product))   
-      #@pictures = Picture.create(:picture)
-      
+        
       if @product.errors.empty?      
          flash.now[:success] = "New item saved successfully"
-         #render text: params.inspect   
          render 'create'         
       else
          flash.now[:error] = "Failed to save item"
@@ -107,6 +99,8 @@ class AdminController < ApplicationController
   def menu_handler
   
       case params[":item"]
+      when "product_list"
+        puts redirect_to admin_index_path
       when "product"
         puts render partial: "shared/create_product"
       when "user"
@@ -116,16 +110,6 @@ class AdminController < ApplicationController
       end  
   
   end
-  
-
-  
-
 
 end
-
-
-
-
-# f = Dir.glob("#{Rails.root}/app/assets/images/*")
-#f.map{|file| File.basename(file, File.extname(file))}
 

@@ -1,7 +1,7 @@
 module PictureHelper
 
    def get_pictures_names
-      f = Dir.glob("#{Rails.root}/app/assets/images/product/*") 
+      f = Dir.glob("#{Rails.root}/app/assets/images/*") 
       f.map{|file| File.basename(file)}
       #f.map{|file| File.basename(file, File.extname(file))} #without extention name            
    end
@@ -21,5 +21,11 @@ module PictureHelper
        
        picture
    end
+   
+   def get_slideshow_pictures
+       slideshows = Slideshow.all
+       slideshows
+   end
+   
 
 end

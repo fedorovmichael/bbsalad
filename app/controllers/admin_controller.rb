@@ -13,7 +13,7 @@ class AdminController < ApplicationController
 
   end
   
-  def show
+  def show  
   end
   
   def new
@@ -99,6 +99,8 @@ class AdminController < ApplicationController
   def menu_handler
   
       case params[":item"]
+      when "product_list"
+        puts redirect_to admin_index_path
       when "product"
         puts render partial: "shared/create_product"
       when "user"

@@ -1,5 +1,19 @@
 Rails.application.routes.draw do
 
+  get 'slideshow/new'
+
+  get 'slideshow/create'
+
+  get 'slideshow/update'
+
+  get 'slideshow/edit'
+
+  get 'slideshow/destroy'
+
+  get 'slideshow/index'
+
+  get 'slideshow/show'
+
 root 'home#index'
 
 get 'product/index'
