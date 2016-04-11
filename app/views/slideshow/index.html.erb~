@@ -1,0 +1,28 @@
+
+<h2>List Slideshow</h2>   
+
+<p style="text-align:left;"><%= link_to 'New Slideshow', new_slideshow_path %></p>
+
+<% if @slideshow.empty?%>
+   <label>No slideshow</label>
+<%else%>
+   <table class='table' style="text-align:left;">
+      <thead>
+         <tr>
+            <th>Name</th>
+            <th>Link</th>
+         </tr>
+         </thead>
+         <tbody>
+            <%@slideshow.each do |s|%>
+               <tr>
+                  <td><%= s.name %></td>
+                  <td><%= s.link %></td>
+                  <td><%= link_to 'Edit', edit_slideshow_path(s.id) %></td>
+                  <td><%= link_to "Delete", s, method: :delete, data:{ confirm: "Are you sure?" }  %></td>
+               </tr>
+            <%end%>
+         </tbody>
+   
+   </table>
+<%end%>
