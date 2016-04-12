@@ -4,10 +4,10 @@
          row.each do |p| %>   
             <div class="col-sm-6 col-md-3">
              <div class="thumbnail">
-                <%= image_tag get_picture_link(p.pictures) , :width => "242px", :height => "200px", class: "img-thumbnail", style:"width:242px; height:180px;" %>
+                <%= image_tag get_picture_link(p.pictures), class: "img-thumbnail", style:"width:242px; height:180px;" %>
                <div class="caption">
                  <p class="h3-product"><%= p.name %></p>
-                 <p><%= p.overview %></p>                     
+                 <p style="height:60px; min-height:60px;"><%= p.overview %></p>                     
                  <p>
                   <span class="pull-left price" style="margin-right:5px;">ש"ח</span>
                   <span class="pull-left price"><%= p.price.to_i %></span>
