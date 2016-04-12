@@ -7,7 +7,7 @@
    <div class="cycle-slideshow" style="margin: 0 auto; text-align: center; border: 5px solid #FFF; width:100%; height:600px; padding:5px;"   
     data-cycle-timeout=2000>
     <% get_slideshow_pictures.each do |p| %>
-      <%= image_tag p, :width => "100%", :height => "100%" %>         
+      <%= image_tag p.link, :width => "100%", :height => "100%" %>         
     <%end%>
    </div>
    </div>
@@ -18,7 +18,7 @@
          <h2 class="h2-picture">מנות חדשות</h2>
           <% @new_product.each do |p| %>
              <div style="height: 150px; border-bottom: 1px solid #E0DAC1; padding-top:15px;">
-               <%= image_tag get_picture_link(p.pictures), :width => "150px", :height => "150px", class: "img-thumbnail pull-left img-box" %>         
+               <%= image_tag get_picture_link(p.pictures), class: "img-thumbnail pull-left img-box", style: "width:150px; height:130px" %>         
                <p><strong><%= p.name %></strong></p>
                <p><%= p.overview %></p>
                <p><%=link_to "פרטים", product_show_path(id: p.id), class: "button"%></p>
@@ -29,7 +29,7 @@
          <h2 class="h2-picture">מנות פופולריות</h2>
           <% @favorints_product.each do |p| %>
              <div style="height: 150px; border-bottom: 1px solid #E0DAC1; padding-top:15px;">
-               <%= image_tag get_picture_link(p.pictures), :width => "150px", :height => "150px", class: "img-thumbnail pull-left img-box" %>         
+               <%= image_tag get_picture_link(p.pictures), class: "img-thumbnail pull-left img-box", style: "width:150px; height:130px" %>         
                <p><strong><%= p.name %></strong></p>
                <p><%= p.overview %></p>
                <p><%=link_to "פרטים", product_show_path(id: p.id), class: "button"%></p>

@@ -18,7 +18,7 @@
          <h2 class="h2-picture">מנות חדשות</h2>
           <% @new_product.each do |p| %>
              <div style="height: 150px; border-bottom: 1px solid #E0DAC1; padding-top:15px;">
-               <%= image_tag get_picture_link(p.pictures), :width => "150px", :height => "150px", class: "img-thumbnail pull-left img-box" %>         
+               <%= image_tag get_picture_link(p.pictures), class: "img-thumbnail pull-left img-box", style: "width:150px; height:110px" %>         
                <p><strong><%= p.name %></strong></p>
                <p><%= p.overview %></p>
                <p><%=link_to "פרטים", product_show_path(id: p.id), class: "button"%></p>
@@ -29,7 +29,7 @@
          <h2 class="h2-picture">מנות פופולריות</h2>
           <% @favorints_product.each do |p| %>
              <div style="height: 150px; border-bottom: 1px solid #E0DAC1; padding-top:15px;">
-               <%= image_tag get_picture_link(p.pictures), :width => "150px", :height => "150px", class: "img-thumbnail pull-left img-box" %>         
+               <%= image_tag get_picture_link(p.pictures), class: "img-thumbnail pull-left img-box", style: "width:150px; height:110px" %>         
                <p><strong><%= p.name %></strong></p>
                <p><%= p.overview %></p>
                <p><%=link_to "פרטים", product_show_path(id: p.id), class: "button"%></p>

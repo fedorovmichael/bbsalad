@@ -1,14 +1,10 @@
-<script>   
-   //setBodyHeight();
-</script>
-
 <div class="container">
   <h1 class="h2-picture"><%= @current_caption %></h1>
      <% @products.in_groups(RowCounts(@products), false) do |row|     
          row.each do |p| %>   
             <div class="col-sm-6 col-md-3">
              <div class="thumbnail">
-                <%= image_tag get_picture_link(p.pictures) , :width => "242px", :height => "200px", class: "img-thumbnail" %>
+                <%= image_tag get_picture_link(p.pictures) , :width => "242px", :height => "200px", class: "img-thumbnail", style:"width:242px; height:180px;" %>
                <div class="caption">
                  <p class="h3-product"><%= p.name %></p>
                  <p><%= p.overview %></p>                     
