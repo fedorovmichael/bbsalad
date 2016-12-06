@@ -1,0 +1,24 @@
+
+<script>
+	
+	$(document).ready(function(){
+	   $('.gallery a').click(function(event){
+	     event.preventDefault(); 
+	   });
+	});
+
+</script>
+<div class="container">  
+<h1 class="h2-picture">תמונות</h1>
+<div class="gallery">
+   <% @pictures.in_groups(RowCounts(@pictures), false) do |row|     
+       row.each do |p| %>
+         <%= link_to  asset_url(p.link) do %>
+            <%= image_tag p.link %>
+         <% end %>
+		 <% end %>
+		 <div class="clear"></div>
+    <% end %>
+
+</div>
+</div>
