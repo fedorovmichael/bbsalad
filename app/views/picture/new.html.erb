@@ -1,2 +1,36 @@
-<h1>Picture#new</h1>
-<p>Find me in app/views/picture/new.html.erb</p>
+<h1>Picture new</h1>
+  <%       
+      @listImages = get_pictures_names
+  %>
+  <%=form_for Picture.new, url: { controller: 'picture', action: 'create' }, :html => {:style => 'text-align:left; margin-top:40px;'}  do |f| %>
+
+   <div class="row">
+      <div class="span6 offset3">
+       <%= f.label :name, :style => 'width:100px; text-align:left;' %>
+       <%= f.text_field :name %>
+      </div>
+   </div>
+   <div class="row">
+     <div class="span6 offset3" style="margin-top:20px; margin-bottom:10px;">
+       <%= f.label :link, :style => 'width:100px; text-align:left;' %>
+       <select style="width:179px;" id='picture_link' name='picture[link]'>
+         <option></option>
+         <% @listImages.each do |i| %>         
+           <option><%= i %></option>         
+         <%end%>
+         </select>
+     </div>
+  </div>
+   
+   <div class="row">
+     <div class="span6 offset3">      
+      <%= f.submit 'Create', :style => 'width:179px;' %>
+     </div>
+   </div>    
+
+<%end%>
+  
+     
+
+  
+

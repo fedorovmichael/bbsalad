@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require cycle2
+//= require simple-lightbox
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require turbolinks

@@ -1,5 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "simplelightbox.min.css";
+@import "demo.css";
 
 html{
    height:100%;   
@@ -13,8 +15,9 @@ body{
 
 .navbar-custom {
 	background-color:#F5F0DA;
-    color:#000;
+   color:#000;
   	border-radius:0;
+  	margin-bottom:0;
 }
   
 .navbar-custom .navbar-nav > li > a {
@@ -180,5 +183,49 @@ h1,h2,h3,h4,h5 {
     min-height: calc(100% - 221px); 
    
 }
+
+.menu-product
+{
+   color:#000;	
+ 	font-family: "Arial,Helvetica,sans-serif";
+   font-size: 16px;
+   line-height: 18px;
+   text-transform: uppercase;   
+   font-style: italic;
+}
+
+.menu-product-name
+{   
+   width:250px;  
+   margin-left:10px;
+   /*font-weight: bold;*/
+   border-bottom-size:1px;
+   border-bottom-color:#229922;
+   border-bottom-style:dotted;
+   
+}
+
+.menu-product-price
+{   
+   width:50px;
+   
+}
+
+/**.menu-product-name::after
+{
+   content: '';
+	display: inline-block;
+	width: 23vw;
+	height: 0;
+	border-bottom: 2px dotted;
+	letter-spacing: 2px;
+	pointer-events: none;
+	padding-left: 0.25em;
+	margin-left: -23vw;
+}**/
+
+
+
+
 
 

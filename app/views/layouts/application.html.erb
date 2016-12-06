@@ -1,17 +1,33 @@
 <!DOCTYPE html>
 <html style="direction:rtl;">
 <head>
-  <title>Big Ben Salad</title>
+  <title>לה ציפולה</title>
+  <link href='http://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+  <%= csrf_meta_tags %>  
 </head>
 <body>
 <%= render 'layouts/header'%>
 <div id="divContant" class="container">
    <%= yield %>
 </div>
-<%= render 'layouts/footer' %>   
+<%= render 'layouts/footer' %>
+
+<script>
+  
+	$(function(){
+		var $gallery = $('.gallery a').simpleLightbox();
+		console.log('loaded simple lightbox');
+	});
+	
+	$(document).ready(function(){
+	   $('.gallery a').click(function(event){
+	     event.preventDefault(); 
+	   });
+	});
+
+</script>   
 </body> 
 </html>
 

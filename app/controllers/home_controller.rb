@@ -7,4 +7,8 @@ class HomeController < ApplicationController
       render 'index'
       
   end
+  
+  def contact
+   render 'contact'
+  end
 end

@@ -1,8 +1,23 @@
 class ProductController < ApplicationController
   def index
-      @products = Product.where('product_type = ?',params[:product_type])
-      @products = @products.includes(:pictures)      
-      page_caption
+      @current_caption = ''
+      @hashTypes = Hash.new(0)
+      type_name = ''
+ 
+      @productTypes = ProductType.all
+      
+      @productTypes.each do |type|
+         @products = Product.where('product_type = ?', type.name)
+         if !@products.blank?
+            type_name = page_caption(type.name)
+            @hashTypes[type_name] = @products
+            @current_caption = type_name
+         end
+      end
+      
+      #@products = Product.where('product_type = ?',params[:product_type])
+      #@products = @products.includes(:pictures)      
+      #page_caption
       #@products = valid_picture(@products)      
       render 'index'
   end
@@ -45,19 +60,24 @@ class ProductController < ApplicationController
       Picture.new(name: '100_0646', link: '100_0646.bmp', position: '1', product_id: params[:id])
   end
   
-  def page_caption
+  def page_caption(cur_type)
       
-      @current_caption = ''
-      case params[:product_type]
+      current_type = ''
+            
+      case cur_type      
       when 'soups'
-        @current_caption = 'מרקים'
+        current_type = 'מרקים'
       when 'sandwiches'
-        @current_caption = 'כריכים'
+        current_type = 'כריכים'
       when 'smallsalad'
-        @current_caption = 'סלטים קטנים'
+        current_type = 'סלטים קטנים'
       when 'bigsalad'
-        @current_caption = 'סלטים גדולים'
+        current_type = 'סלטים גדולים'
+      when 'business'
+        current_type = 'עסקיות'
       end
+      
+      current_type
       
   end
   

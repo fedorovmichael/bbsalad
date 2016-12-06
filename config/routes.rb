@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
 root 'home#index'
 
+get 'home/contact' => 'home#contact', as: 'contact' 
+
 get 'product/index'
 get 'product/show'
 get 'product/search'
@@ -20,11 +22,14 @@ delete   'account/logout' => 'account#destroy'
 #post     'admin/create_user' => 'admin#create_user'
 
 resources :admin
+delete   'admin/:id' => 'admin#destroy', as: "admin_delete"
 post     'admin/menu_handler' => 'admin#menu_handler'
 get      'admin/menu_handler' => 'admin#menu_handler'
 
 
 post     'picture/picture_handler' => 'picture#picture_handler', as: 'assign_picture'
+get      'picture/gallery' => 'picture#gallery', as: 'gallery'
+post     'picture/gallery' => 'picture#gallery'
 resources :picture
 
 resources :slideshow

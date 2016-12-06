@@ -26,7 +26,7 @@
                   <td><%= p.new %></td>
                   <td><%= p.favorits %></td>
                   <td><%= link_to 'Edit', edit_admin_path(p.id) %></td>
-                  <td><%= link_to "Delete", url: { controller: 'admin', action: 'destroy' }, method: :delete, data:{ confirm: "Are you sure?" }  %></td>
+                  <td><%= link_to "Delete", admin_delete_path(p.id) , method: :delete, data:{ confirm: "Are you sure?" }  %></td>
                </tr>
             <%end%>
          </tbody>

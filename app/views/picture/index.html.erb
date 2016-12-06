@@ -1,2 +1,26 @@
-<h1>Picture#index</h1>
-<p>Find me in app/views/picture/index.html.erb</p>
+<h2>List Picture</h2>
+<p style="text-align:left;"><%= link_to 'New Picture', new_picture_path %></p>
+
+<% if @pictures.empty?%>
+   <label>No pictures</label>
+<%else%>
+   <table class='table' style="text-align:left;">
+      <thead>
+         <tr>
+            <th>Name</th>
+            <th>Link</th>
+         </tr>
+         </thead>
+         <tbody>
+            <%@pictures.each do |p|%>
+               <tr>
+                  <td><%= p.name %></td>
+                  <td><%= p.link %></td>
+                  <td><%= link_to 'Edit', edit_picture_path(p.id) %></td>
+                  <td><%= link_to "Delete", p, method: :delete, data:{ confirm: "Are you sure?" }  %></td>
+               </tr>
+            <%end%>
+         </tbody>
+   
+   </table>
+<%end%>

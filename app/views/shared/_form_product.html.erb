@@ -7,7 +7,7 @@
    <div class="row">
       <div class="span6 offset3">
       <%= f.label :overview, :style => 'width:100px; text-align:left;' %>
-      <%= f.text_field :overview %>
+      <%= f.text_field :overview, :style => 'width: 600px;'  %>
       </div>
    </div>
  <div class="row">
@@ -22,22 +22,22 @@
       <%= f.label :product_type, 'Type', :style => 'width:100px; text-align:left;' %>
       <%= f.collection_select(:product_type, ProductType.all, :name, :name, 
                               {:selected => @product.product_type},
-                              {:style => 'width:179px;'} )%>
+                              {:style => 'width:187px;'} )%>
     
      </div>
    </div>
     
    <div class="row">
       <div class="span6 offset3">
-      <%= f.label :favorits, :style => 'width:100px; text-align:left;' %>
-      <%= f.text_field :favorits %>
+      <%= f.label :favorits, :style => 'width:100px; text-align:left;' %>      
+      <%= f.select :favorits, [['true','true'],['false','false']], { :selected => @product.favorits }, { :style => 'width:187px;' } %>
       </div>
    </div>
  
    <div class="row">
       <div class="span6 offset3">
       <%= f.label :new, :style => 'width:100px; text-align:left;' %>
-      <%= f.text_field :new %>
+      <%= f.select :new, [['true','true'],['false','false']], { :selected => @product.new }, { :style => 'width:187px;' } %>
       </div>
    </div>  
 
