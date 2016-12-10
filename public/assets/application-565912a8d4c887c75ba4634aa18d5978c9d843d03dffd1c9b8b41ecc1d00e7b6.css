@@ -5,8 +5,6 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
-@import url(simplelightbox.min.css);
-@import url(demo.css);
 /* line 9, /home/michael/.rvm/gems/ruby-2.2.1/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_normalize.scss */
 html {
   font-family: sans-serif;
@@ -8771,19 +8769,308 @@ button.close {
     display: none !important;
   }
 }
-/* line 6, /media/michael/Data/Development/Ruby/projects/bbsalad/app/assets/stylesheets/application.css.scss */
+/* line 27, /media/michael/Data/Development/Ruby/projects/bbsalad/vendor/assets/stylesheets/simplelightbox.scss */
+body.hidden-scroll {
+  overflow: hidden;
+}
+
+/* line 30, /media/michael/Data/Development/Ruby/projects/bbsalad/vendor/assets/stylesheets/simplelightbox.scss */
+.sl-overlay {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: #fff;
+  opacity: 0.7;
+  display: none;
+  z-index: 1006;
+}
+
+/* line 41, /media/michael/Data/Development/Ruby/projects/bbsalad/vendor/assets/stylesheets/simplelightbox.scss */
+.sl-wrapper {
+  z-index: 1000;
+}
+/* line 43, /media/michael/Data/Development/Ruby/projects/bbsalad/vendor/assets/stylesheets/simplelightbox.scss */
+.sl-wrapper button {
+  border: 0 none;
+  background: transparent;
+  font-size: 28px;
+  padding: 0;
+  cursor: pointer;
+}
+/* line 49, /media/michael/Data/Development/Ruby/projects/bbsalad/vendor/assets/stylesheets/simplelightbox.scss */
+.sl-wrapper button:hover {
+  opacity: 0.7;
+}
+/* line 54, /media/michael/Data/Development/Ruby/projects/bbsalad/vendor/assets/stylesheets/simplelightbox.scss */
+.sl-wrapper .sl-close {
+  display: none;
+  position: fixed;
+  right: 30px;
+  top: 30px;
+  z-index: 1015;
+  margin-top: -14px;
+  margin-right: -14px;
+  height: 44px;
+  width: 44px;
+  line-height: 44px;
+  font-family: Arial, Baskerville, monospace;
+  color: #000;
+  font-size: 3rem;
+}
+/* line 70, /media/michael/Data/Development/Ruby/projects/bbsalad/vendor/assets/stylesheets/simplelightbox.scss */
+.sl-wrapper .sl-counter {
+  display: none;
+  position: fixed;
+  top: 30px;
+  left: 30px;
+  z-index: 1015;
+  color: #000;
+  font-size: 1rem;
+}
+/* line 80, /media/michael/Data/Development/Ruby/projects/bbsalad/vendor/assets/stylesheets/simplelightbox.scss */
+.sl-wrapper .sl-navigation {
+  width: 100%;
+  display: none;
+}
+/* line 83, /media/michael/Data/Development/Ruby/projects/bbsalad/vendor/assets/stylesheets/simplelightbox.scss */
+.sl-wrapper .sl-navigation button {
+  position: fixed;
+  top: 50%;
+  margin-top: -22px;
+  height: 44px;
+  width: 22px;
+  line-height: 44px;
+  text-align: center;
+  display: block;
+  z-index: 1015;
+  font-family: Arial, Baskerville, monospace;
+  color: #000;
+}
+/* line 95, /media/michael/Data/Development/Ruby/projects/bbsalad/vendor/assets/stylesheets/simplelightbox.scss */
+.sl-wrapper .sl-navigation button.sl-next {
+  right: 5px;
+  font-size: 2rem;
+}
+/* line 100, /media/michael/Data/Development/Ruby/projects/bbsalad/vendor/assets/stylesheets/simplelightbox.scss */
+.sl-wrapper .sl-navigation button.sl-prev {
+  left: 5px;
+  font-size: 2rem;
+}
+@media (min-width: 35.5em) {
+  /* line 83, /media/michael/Data/Development/Ruby/projects/bbsalad/vendor/assets/stylesheets/simplelightbox.scss */
+  .sl-wrapper .sl-navigation button {
+    width: 44px;
+  }
+  /* line 107, /media/michael/Data/Development/Ruby/projects/bbsalad/vendor/assets/stylesheets/simplelightbox.scss */
+  .sl-wrapper .sl-navigation button.sl-next {
+    right: 10px;
+    font-size: 3rem;
+  }
+  /* line 112, /media/michael/Data/Development/Ruby/projects/bbsalad/vendor/assets/stylesheets/simplelightbox.scss */
+  .sl-wrapper .sl-navigation button.sl-prev {
+    left: 10px;
+    font-size: 3rem;
+  }
+}
+@media (min-width: 50em) {
+  /* line 83, /media/michael/Data/Development/Ruby/projects/bbsalad/vendor/assets/stylesheets/simplelightbox.scss */
+  .sl-wrapper .sl-navigation button {
+    width: 44px;
+  }
+  /* line 120, /media/michael/Data/Development/Ruby/projects/bbsalad/vendor/assets/stylesheets/simplelightbox.scss */
+  .sl-wrapper .sl-navigation button.sl-next {
+    right: 20px;
+    font-size: 3rem;
+  }
+  /* line 125, /media/michael/Data/Development/Ruby/projects/bbsalad/vendor/assets/stylesheets/simplelightbox.scss */
+  .sl-wrapper .sl-navigation button.sl-prev {
+    left: 20px;
+    font-size: 3rem;
+  }
+}
+/* line 133, /media/michael/Data/Development/Ruby/projects/bbsalad/vendor/assets/stylesheets/simplelightbox.scss */
+.sl-wrapper .sl-image {
+  position: fixed;
+  -ms-touch-action: none;
+  touch-action: none;
+  z-index: 10000;
+}
+/* line 138, /media/michael/Data/Development/Ruby/projects/bbsalad/vendor/assets/stylesheets/simplelightbox.scss */
+.sl-wrapper .sl-image img {
+  margin: 0;
+  padding: 0;
+  display: block;
+  border: 0 none;
+}
+@media (min-width: 35.5em) {
+  /* line 138, /media/michael/Data/Development/Ruby/projects/bbsalad/vendor/assets/stylesheets/simplelightbox.scss */
+  .sl-wrapper .sl-image img {
+    border: 0 none;
+  }
+}
+@media (min-width: 50em) {
+  /* line 138, /media/michael/Data/Development/Ruby/projects/bbsalad/vendor/assets/stylesheets/simplelightbox.scss */
+  .sl-wrapper .sl-image img {
+    border: 0 none;
+  }
+}
+/* line 151, /media/michael/Data/Development/Ruby/projects/bbsalad/vendor/assets/stylesheets/simplelightbox.scss */
+.sl-wrapper .sl-image iframe {
+  background: #000;
+  border: 0 none;
+}
+@media (min-width: 35.5em) {
+  /* line 151, /media/michael/Data/Development/Ruby/projects/bbsalad/vendor/assets/stylesheets/simplelightbox.scss */
+  .sl-wrapper .sl-image iframe {
+    border: 0 none;
+  }
+}
+@media (min-width: 50em) {
+  /* line 151, /media/michael/Data/Development/Ruby/projects/bbsalad/vendor/assets/stylesheets/simplelightbox.scss */
+  .sl-wrapper .sl-image iframe {
+    border: 0 none;
+  }
+}
+/* line 161, /media/michael/Data/Development/Ruby/projects/bbsalad/vendor/assets/stylesheets/simplelightbox.scss */
+.sl-wrapper .sl-image .sl-caption {
+  display: none;
+  padding: 10px;
+  color: #fff;
+  background: #000;
+  opacity: 0.8;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+/* line 172, /media/michael/Data/Development/Ruby/projects/bbsalad/vendor/assets/stylesheets/simplelightbox.scss */
+.sl-wrapper .sl-image .sl-caption.pos-top {
+  bottom: auto;
+  top: 0;
+}
+/* line 177, /media/michael/Data/Development/Ruby/projects/bbsalad/vendor/assets/stylesheets/simplelightbox.scss */
+.sl-wrapper .sl-image .sl-caption.pos-outside {
+  bottom: auto;
+}
+/* line 182, /media/michael/Data/Development/Ruby/projects/bbsalad/vendor/assets/stylesheets/simplelightbox.scss */
+.sl-wrapper .sl-image .sl-download {
+  display: none;
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  color: #000;
+  z-index: 1005;
+}
+
+/* line 193, /media/michael/Data/Development/Ruby/projects/bbsalad/vendor/assets/stylesheets/simplelightbox.scss */
+.sl-spinner {
+  display: none;
+  border: 5px solid #333;
+  border-radius: 40px;
+  height: 40px;
+  left: 50%;
+  margin: -20px 0 0 -20px;
+  opacity: 0;
+  position: fixed;
+  top: 50%;
+  width: 40px;
+  z-index: 1007;
+  -webkit-animation: pulsate 1s ease-out infinite;
+  -moz-animation: pulsate 1s ease-out infinite;
+  -ms-animation: pulsate 1s ease-out infinite;
+  -o-animation: pulsate 1s ease-out infinite;
+  animation: pulsate 1s ease-out infinite;
+}
+
+/* line 212, /media/michael/Data/Development/Ruby/projects/bbsalad/vendor/assets/stylesheets/simplelightbox.scss */
+.sl-scrollbar-measure {
+  position: absolute;
+  top: -9999px;
+  width: 50px;
+  height: 50px;
+  overflow: scroll;
+}
+
+@-webkit-keyframes pulsate {
+  0% {
+    transform: scale(0.1);
+    opacity: 0.0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+@keyframes pulsate {
+  0% {
+    transform: scale(0.1);
+    opacity: 0.0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+@-moz-keyframes pulsate {
+  0% {
+    transform: scale(0.1);
+    opacity: 0.0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+@-o-keyframes pulsate {
+  0% {
+    transform: scale(0.1);
+    opacity: 0.0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+@-ms-keyframes pulsate {
+  0% {
+    transform: scale(0.1);
+    opacity: 0.0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+/* line 5, /media/michael/Data/Development/Ruby/projects/bbsalad/app/assets/stylesheets/application.css.scss */
 html {
   height: 100%;
 }
 
-/* line 10, /media/michael/Data/Development/Ruby/projects/bbsalad/app/assets/stylesheets/application.css.scss */
+/* line 9, /media/michael/Data/Development/Ruby/projects/bbsalad/app/assets/stylesheets/application.css.scss */
 body {
   direction: rtl;
   background: #F5F0DA none repeat scroll 0% 0%;
   height: 100%;
 }
 
-/* line 16, /media/michael/Data/Development/Ruby/projects/bbsalad/app/assets/stylesheets/application.css.scss */
+/* line 15, /media/michael/Data/Development/Ruby/projects/bbsalad/app/assets/stylesheets/application.css.scss */
 .navbar-custom {
   background-color: #F5F0DA;
   color: #000;
@@ -8791,7 +9078,7 @@ body {
   margin-bottom: 0;
 }
 
-/* line 23, /media/michael/Data/Development/Ruby/projects/bbsalad/app/assets/stylesheets/application.css.scss */
+/* line 22, /media/michael/Data/Development/Ruby/projects/bbsalad/app/assets/stylesheets/application.css.scss */
 .navbar-custom .navbar-nav > li > a {
   color: #000;
   padding-left: 20px;
@@ -8804,20 +9091,20 @@ body {
   font-style: italic;
 }
 
-/* line 35, /media/michael/Data/Development/Ruby/projects/bbsalad/app/assets/stylesheets/application.css.scss */
+/* line 34, /media/michael/Data/Development/Ruby/projects/bbsalad/app/assets/stylesheets/application.css.scss */
 .navbar-custom .navbar-nav > .active > a, .navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus {
   color: #000;
   background-color: transparent;
 }
 
-/* line 40, /media/michael/Data/Development/Ruby/projects/bbsalad/app/assets/stylesheets/application.css.scss */
+/* line 39, /media/michael/Data/Development/Ruby/projects/bbsalad/app/assets/stylesheets/application.css.scss */
 .navbar-custom .navbar-nav > li > a:hover, .nav > li > a:focus {
   text-decoration: none;
   background-color: #229922;
   color: #fff;
 }
 
-/* line 46, /media/michael/Data/Development/Ruby/projects/bbsalad/app/assets/stylesheets/application.css.scss */
+/* line 45, /media/michael/Data/Development/Ruby/projects/bbsalad/app/assets/stylesheets/application.css.scss */
 .navbar-custom .navbar-brand {
   color: #229922;
   font-family: "Arial,Helvetica,sans-serif";
@@ -8828,22 +9115,22 @@ body {
   font-weight: bold;
 }
 
-/* line 55, /media/michael/Data/Development/Ruby/projects/bbsalad/app/assets/stylesheets/application.css.scss */
+/* line 54, /media/michael/Data/Development/Ruby/projects/bbsalad/app/assets/stylesheets/application.css.scss */
 .navbar-custom .navbar-toggle {
   background-color: #000;
 }
 
-/* line 58, /media/michael/Data/Development/Ruby/projects/bbsalad/app/assets/stylesheets/application.css.scss */
+/* line 57, /media/michael/Data/Development/Ruby/projects/bbsalad/app/assets/stylesheets/application.css.scss */
 .navbar-custom .icon-bar {
   background-color: #33aa33;
 }
 
-/* line 62, /media/michael/Data/Development/Ruby/projects/bbsalad/app/assets/stylesheets/application.css.scss */
+/* line 61, /media/michael/Data/Development/Ruby/projects/bbsalad/app/assets/stylesheets/application.css.scss */
 .navbar-custom .navbar-form {
   padding-top: 10px;
 }
 
-/* line 67, /media/michael/Data/Development/Ruby/projects/bbsalad/app/assets/stylesheets/application.css.scss */
+/* line 66, /media/michael/Data/Development/Ruby/projects/bbsalad/app/assets/stylesheets/application.css.scss */
 .h2-picture {
   text-align: center;
   background: url(/assets/heading-2-border-878cfc26347849a3d05fc6fe0649b8adfba779a967cb2eda2503f1fb6e309b11.png) no-repeat center bottom;
@@ -8851,20 +9138,20 @@ body {
   margin: 0 0 15px 0;
 }
 
-/* line 74, /media/michael/Data/Development/Ruby/projects/bbsalad/app/assets/stylesheets/application.css.scss */
+/* line 73, /media/michael/Data/Development/Ruby/projects/bbsalad/app/assets/stylesheets/application.css.scss */
 .h3-product {
   text-align: right;
   color: #578905;
 }
 
-/* line 79, /media/michael/Data/Development/Ruby/projects/bbsalad/app/assets/stylesheets/application.css.scss */
+/* line 78, /media/michael/Data/Development/Ruby/projects/bbsalad/app/assets/stylesheets/application.css.scss */
 h1, h2, h3, h4, h5 {
   font-weight: normal;
   font-family: Georgia,"Times New Roman",Times,serif;
   font-style: italic;
 }
 
-/* line 85, /media/michael/Data/Development/Ruby/projects/bbsalad/app/assets/stylesheets/application.css.scss */
+/* line 84, /media/michael/Data/Development/Ruby/projects/bbsalad/app/assets/stylesheets/application.css.scss */
 .button {
   background: transparent url(/assets/button-tail-631cfc395cfde00059003ae9c696f713b615ec747a5a0ef9058ed607aecaffdd.gif) repeat-x scroll 0px 0px;
   font-family: Arial,Helvetica,sans-serif;
@@ -8877,19 +9164,19 @@ h1, h2, h3, h4, h5 {
   height: 30px;
 }
 
-/* line 97, /media/michael/Data/Development/Ruby/projects/bbsalad/app/assets/stylesheets/application.css.scss */
+/* line 96, /media/michael/Data/Development/Ruby/projects/bbsalad/app/assets/stylesheets/application.css.scss */
 .button:hover {
   background: url(/assets/button-tail-631cfc395cfde00059003ae9c696f713b615ec747a5a0ef9058ed607aecaffdd.gif) repeat-x 0 bottom #90c409;
   text-decoration: none;
   color: #FFF;
 }
 
-/* line 103, /media/michael/Data/Development/Ruby/projects/bbsalad/app/assets/stylesheets/application.css.scss */
+/* line 102, /media/michael/Data/Development/Ruby/projects/bbsalad/app/assets/stylesheets/application.css.scss */
 .img-box {
   box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.2);
 }
 
-/* line 109, /media/michael/Data/Development/Ruby/projects/bbsalad/app/assets/stylesheets/application.css.scss */
+/* line 108, /media/michael/Data/Development/Ruby/projects/bbsalad/app/assets/stylesheets/application.css.scss */
 .footer-nav-center {
   margin: 0 auto;
   display: table;
@@ -8898,7 +9185,7 @@ h1, h2, h3, h4, h5 {
   color: #fff;
 }
 
-/* line 117, /media/michael/Data/Development/Ruby/projects/bbsalad/app/assets/stylesheets/application.css.scss */
+/* line 116, /media/michael/Data/Development/Ruby/projects/bbsalad/app/assets/stylesheets/application.css.scss */
 .footer-nav-center > li > a {
   color: #fff;
   padding-left: 20px;
@@ -8910,20 +9197,20 @@ h1, h2, h3, h4, h5 {
   padding-top: 12px;
 }
 
-/* line 129, /media/michael/Data/Development/Ruby/projects/bbsalad/app/assets/stylesheets/application.css.scss */
+/* line 128, /media/michael/Data/Development/Ruby/projects/bbsalad/app/assets/stylesheets/application.css.scss */
 .footer-nav-center > li:hover > a:hover {
   background-color: transparent;
   text-decoration: underline;
 }
 
-/* line 134, /media/michael/Data/Development/Ruby/projects/bbsalad/app/assets/stylesheets/application.css.scss */
+/* line 133, /media/michael/Data/Development/Ruby/projects/bbsalad/app/assets/stylesheets/application.css.scss */
 .footer-nav-center > .active > a, .footer-nav-center > .active > a:hover, .footer-nav-center > .active > a:focus {
   color: #fff;
   background-color: transparent;
   text-decoration: underline;
 }
 
-/* line 140, /media/michael/Data/Development/Ruby/projects/bbsalad/app/assets/stylesheets/application.css.scss */
+/* line 139, /media/michael/Data/Development/Ruby/projects/bbsalad/app/assets/stylesheets/application.css.scss */
 .price {
   display: block;
   font-family: Arial,Helvetica,sans-serif;
@@ -8931,21 +9218,21 @@ h1, h2, h3, h4, h5 {
   font-size: 24px;
 }
 
-/* line 147, /media/michael/Data/Development/Ruby/projects/bbsalad/app/assets/stylesheets/application.css.scss */
+/* line 146, /media/michael/Data/Development/Ruby/projects/bbsalad/app/assets/stylesheets/application.css.scss */
 .product-edit-head {
   width: 500px;
   margin: 0 auto;
   padding-bottom: 40px;
 }
 
-/* line 153, /media/michael/Data/Development/Ruby/projects/bbsalad/app/assets/stylesheets/application.css.scss */
+/* line 152, /media/michael/Data/Development/Ruby/projects/bbsalad/app/assets/stylesheets/application.css.scss */
 .product-edit-box {
   background: #538505 url(/assets/produc-edit-box-ad2dcaef7f2826a1ab06d9f8fe220ffe79081bec0b7e6fd5cf0772a803c2cd73.jpg) repeat-x scroll 0px 0px;
   width: 500px;
   margin: 0 auto;
 }
 
-/* line 159, /media/michael/Data/Development/Ruby/projects/bbsalad/app/assets/stylesheets/application.css.scss */
+/* line 158, /media/michael/Data/Development/Ruby/projects/bbsalad/app/assets/stylesheets/application.css.scss */
 .product-edit-text {
   color: #fff;
   font-family: "Arial,Helvetica,sans-serif";
@@ -8955,7 +9242,7 @@ h1, h2, h3, h4, h5 {
   margin-top: 10px;
 }
 
-/* line 168, /media/michael/Data/Development/Ruby/projects/bbsalad/app/assets/stylesheets/application.css.scss */
+/* line 167, /media/michael/Data/Development/Ruby/projects/bbsalad/app/assets/stylesheets/application.css.scss */
 .logo-a {
   background: transparent url(/images/logo5.png) no-repeat scroll 0 0;
   overflow: hidden;
@@ -8964,7 +9251,7 @@ h1, h2, h3, h4, h5 {
   height: 60px;
 }
 
-/* line 176, /media/michael/Data/Development/Ruby/projects/bbsalad/app/assets/stylesheets/application.css.scss */
+/* line 175, /media/michael/Data/Development/Ruby/projects/bbsalad/app/assets/stylesheets/application.css.scss */
 #divContant {
   min-height: 100%;
   height: auto !important;
@@ -8976,7 +9263,7 @@ h1, h2, h3, h4, h5 {
   min-height: calc(100% - 221px);
 }
 
-/* line 187, /media/michael/Data/Development/Ruby/projects/bbsalad/app/assets/stylesheets/application.css.scss */
+/* line 186, /media/michael/Data/Development/Ruby/projects/bbsalad/app/assets/stylesheets/application.css.scss */
 .menu-product {
   color: #000;
   font-family: "Arial,Helvetica,sans-serif";
@@ -8986,7 +9273,7 @@ h1, h2, h3, h4, h5 {
   font-style: italic;
 }
 
-/* line 197, /media/michael/Data/Development/Ruby/projects/bbsalad/app/assets/stylesheets/application.css.scss */
+/* line 196, /media/michael/Data/Development/Ruby/projects/bbsalad/app/assets/stylesheets/application.css.scss */
 .menu-product-name {
   width: 250px;
   margin-left: 10px;
@@ -8996,7 +9283,7 @@ h1, h2, h3, h4, h5 {
   border-bottom-style: dotted;
 }
 
-/* line 208, /media/michael/Data/Development/Ruby/projects/bbsalad/app/assets/stylesheets/application.css.scss */
+/* line 207, /media/michael/Data/Development/Ruby/projects/bbsalad/app/assets/stylesheets/application.css.scss */
 .menu-product-price {
   width: 50px;
 }
@@ -9013,3 +9300,36 @@ h1, h2, h3, h4, h5 {
 	padding-left: 0.25em;
 	margin-left: -23vw;
 }**/
+/* gallery */
+/* line 227, /media/michael/Data/Development/Ruby/projects/bbsalad/app/assets/stylesheets/application.css.scss */
+.container .gallery a img {
+  float: left;
+  width: 25%;
+  height: 200px;
+  border: 2px solid #fff;
+  -webkit-transition: -webkit-transform .15s ease;
+  -moz-transition: -moz-transform .15s ease;
+  -o-transition: -o-transform .15s ease;
+  -ms-transition: -ms-transform .15s ease;
+  transition: transform .15s ease;
+  position: relative;
+}
+
+/* gallery */
+/* line 240, /media/michael/Data/Development/Ruby/projects/bbsalad/app/assets/stylesheets/application.css.scss */
+.container .gallery a:hover img {
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -o-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+  z-index: 5;
+}
+
+/* gallery */
+/* line 250, /media/michael/Data/Development/Ruby/projects/bbsalad/app/assets/stylesheets/application.css.scss */
+.clear {
+  clear: both;
+  float: none;
+  width: 100%;
+}
