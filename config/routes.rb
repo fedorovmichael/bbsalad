@@ -23,6 +23,7 @@ delete   'account/logout' => 'account#destroy'
 
 resources :admin
 delete   'admin/:id' => 'admin#destroy', as: "admin_delete"
+post     'admin/change_status' => 'admin#change_status', as: "product_status"
 post     'admin/menu_handler' => 'admin#menu_handler'
 get      'admin/menu_handler' => 'admin#menu_handler'
 

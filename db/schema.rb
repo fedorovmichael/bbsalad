@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160406052402) do
+ActiveRecord::Schema.define(version: 20170201055425) do
 
   create_table "pictures", force: :cascade do |t|
     t.string   "name"
@@ -35,8 +35,9 @@ ActiveRecord::Schema.define(version: 20160406052402) do
     t.string   "product_type"
     t.boolean  "new"
     t.boolean  "favorits"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.boolean  "enable",       default: false
   end
 
   create_table "slideshows", force: :cascade do |t|

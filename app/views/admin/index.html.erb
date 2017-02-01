@@ -14,6 +14,9 @@
             <th>Product type</th>
             <th>New</th>
             <th>Favorits</th>
+            <th></th>
+            <th></th>
+            <th>Enable</th>
          </tr>
          </thead>
          <tbody>
@@ -27,11 +30,27 @@
                   <td><%= p.favorits %></td>
                   <td><%= link_to 'Edit', edit_admin_path(p.id) %></td>
                   <td><%= link_to "Delete", admin_delete_path(p.id) , method: :delete, data:{ confirm: "Are you sure?" }  %></td>
+                  <td><%= check_box_tag(p.id.to_s, '', p.enable) %></td>                                                  
                </tr>
             <%end%>
          </tbody>
    
    </table>
 <%end%>
+
+<script>
+   $(document).ready(function(){
+      $("input[type='checkbox']").on('change', function(){      
+         var product_enable = $(this).is(':checked');
+         var product_id = $(this).attr('id');         
+         $.ajax({
+            type: "POST",
+            url: "/admin/change_status",
+            data: {id: product_id, enable: product_enable }
+         });         
+      });
+   });
+
+</script>
    
 

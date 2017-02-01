@@ -110,6 +110,11 @@ class AdminController < ApplicationController
       end  
   
   end
+  
+  def change_status      
+      @product = Product.find(params[:id])      
+      @product.update_attribute(:enable, params[:enable])
+  end
 
 end
 
