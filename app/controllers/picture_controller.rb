@@ -32,7 +32,7 @@ class PictureController < ApplicationController
   end
 
   def update
-     @pictures = Pictures.find(params[:id])
+     @pictures = Picture.find(params[:id])
 	  @pictures.update_attributes(unlock_params(:picture))
 	  
 	 if @pictures.errors.empty?
@@ -77,7 +77,8 @@ class PictureController < ApplicationController
    if @pictures.empty?
       @pictures.new
    end
-   
+   @productDescription = ""
+   @productTitle = "תמונות - לה צ'יפולה"
    render 'gallery'
    
   end

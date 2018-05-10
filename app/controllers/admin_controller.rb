@@ -6,8 +6,10 @@ class AdminController < ApplicationController
 
   def index
   
-   @products = Product.all   
-   @products = @products.includes(:pictures)   
+   @products = Product.order(:product_type).all   
+   @products = @products.includes(:pictures)
+   
+   @product = Product.new  
 
    render 'index'
 
@@ -17,7 +19,6 @@ class AdminController < ApplicationController
   end
   
   def new
-  
    @product = Product.new
    @picture = Array.new
   
@@ -114,6 +115,23 @@ class AdminController < ApplicationController
   def change_status      
       @product = Product.find(params[:id])      
       @product.update_attribute(:enable, params[:enable])
+  end
+  
+  def change_favorit_status
+      @product = Product.find(params[:id])      
+      @product.update_attribute(:favorits, params[:favorits])
+  end
+  
+  def sort_by_product_type      
+      @selected_product_type = params[:product][:product_type]       
+      if params[:product][:product_type].empty?
+         @products = Product.order(:product_type).all
+      else
+         @products = Product.where("product_type = ?", params[:product][:product_type])
+      end
+      @products = @products.includes(:pictures)
+      @product = Product.new   
+      render 'index'
   end
 
 end

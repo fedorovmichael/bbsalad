@@ -1,6 +1,16 @@
 <h2>List products</h2>   
 
 <p style="text-align:left;"><%= link_to 'New', new_admin_path %></p>
+<div>   
+<%=form_for @product, url: { controller: 'admin', action: 'sort_by_product_type' }, :html => {:style => 'text-align:left; margin-top:40px;'} do |f| %>
+      <%= f.label :product_type, 'Type', :style => 'width:100px; text-align:left;' %>
+      <%= f.collection_select(:product_type, ProductType.all, :name, :name, 
+                              {:include_blank => "All", :selected => @selected_product_type},
+                              {:style => 'width:187px;'})%>
+                              
+      <%= f.submit 'Sort', :style => 'width:80px;' %>
+ <%end%>                      
+</div>                           
 
 <% if @products.empty?%>
    <label>No products</label>
@@ -27,10 +37,10 @@
                   <td><%= p.price %></td>
                   <td><%= p.product_type %></td>
                   <td><%= p.new %></td>
-                  <td><%= p.favorits %></td>
+                  <td><%= check_box_tag('favorit_' + p.id.to_s, '', p.favorits) %></td>
                   <td><%= link_to 'Edit', edit_admin_path(p.id) %></td>
                   <td><%= link_to "Delete", admin_delete_path(p.id) , method: :delete, data:{ confirm: "Are you sure?" }  %></td>
-                  <td><%= check_box_tag(p.id.to_s, '', p.enable) %></td>                                                  
+                  <td><%= check_box_tag('enable_' + p.id.to_s, '', p.enable) %></td>                                                  
                </tr>
             <%end%>
          </tbody>
@@ -40,13 +50,25 @@
 
 <script>
    $(document).ready(function(){
-      $("input[type='checkbox']").on('change', function(){      
+      $("input[id^='enable_']").on('change', function(){      
          var product_enable = $(this).is(':checked');
-         var product_id = $(this).attr('id');         
+         var product_id = ($(this).attr('id')).split('_')[1];         
          $.ajax({
             type: "POST",
             url: "/admin/change_status",
             data: {id: product_id, enable: product_enable }
+         });         
+      });
+      
+      $("input[id^='favorit_']").on('change', function(){      
+         var product_favorit = $(this).is(':checked');
+         var full_id = $(this).attr('id');
+         var product_id = full_id.split('_')[1];
+         console.log("product id = " + product_id);         
+         $.ajax({
+            type: "POST",
+            url: "/admin/change_favorit_status",
+            data: {id: product_id, favorits: product_favorit }
          });         
       });
    });

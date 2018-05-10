@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html style="direction:rtl;">
 <head>
-  <title>לה ציפולה</title>
+  <title><%= @productTitle %></title>
+  
+  <meta name="KeyWords" content="סלטים,כריכים,מרקים,שקשוקה,טוסטים,המבורגר צמחוני תל אביב,טבעוני,צמחוני,אוכל בריא,מסעדות,בר סלטים,ארוחת צהריים,ביזנס לאנצ,לזניה"/>
+  
+  <meta name='description' content='<%= yield_meta_tag(:description, @productDescription) %>' />
+  
   <link href='http://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -14,6 +19,7 @@
 </div>
 <%= render 'layouts/footer' %>
 
+<script src="https://yastatic.net/share2/share.js" async="async"></script>
 <script>
   
 	$(function(){
@@ -48,10 +54,8 @@
       catch(e){}
    
    }
-   $(document).ready(function(){
-   
-
-   
+   $(document).ready(function(){  
+      $("meta[name='description']").attr("content", "<%= @productDescription %>");   
    });
 
 </script>

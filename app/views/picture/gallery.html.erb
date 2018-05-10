@@ -13,7 +13,7 @@
 <div class="gallery">
    <% @pictures.in_groups(RowCounts(@pictures), false) do |row|     
        row.each do |p| %>
-         <%= link_to  asset_url(p.link) do %>
+         <%= link_to  asset_url(p.link), :title=> p.name do %>
             <%= image_tag p.link %>
          <% end %>
 		 <% end %>

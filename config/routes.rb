@@ -26,7 +26,8 @@ delete   'admin/:id' => 'admin#destroy', as: "admin_delete"
 post     'admin/change_status' => 'admin#change_status', as: "product_status"
 post     'admin/menu_handler' => 'admin#menu_handler'
 get      'admin/menu_handler' => 'admin#menu_handler'
-
+post     'admin/sort_by_product_type' => 'admin#sort_by_product_type', as: "sort_by_product_type"
+post     'admin/change_favorit_status' => 'admin#change_favorit_status', as: "change_favorit_status"
 
 post     'picture/picture_handler' => 'picture#picture_handler', as: 'assign_picture'
 get      'picture/gallery' => 'picture#gallery', as: 'gallery'

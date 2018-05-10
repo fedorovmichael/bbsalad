@@ -1,13 +1,14 @@
 <div class="container">
 <h1 class="h2-picture">תפריט</h1>
 <%@hashTypes.each do |key, value| %>
-   <h4 style="text-align:center; background-color: #87B400; width: 940px; color: white; margin-right: 100px;"><%= key %></h4>      
+   <h4 class="menu-product-category"><%= key %></h4>      
      <ul style="margin-right: 80px; list-style-type:none;">
      <%value.each do |product|%>      
          <li style="margin-bottom:30px;">
          <div class="menu-product">
             <p class="menu-product-name">
-               <%= product.name %>&nbsp;&nbsp;<span style="float:left; margin-left:3px;"><%= product.price.to_s[0,2] %>&nbsp;&#8362;</span>
+              <%=link_to product.name, product_show_path(id: product.id) %>
+               &nbsp;&nbsp;<span style="float:left; margin-left:3px;"><%= product.price.to_s[0,3] %>&nbsp;&#8362;</span>
             </p>
             <p style="">
                <%= product.overview %>

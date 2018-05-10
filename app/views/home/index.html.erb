@@ -26,15 +26,15 @@
           <%end%>                     
       </div>
       <div class="col-md-6 centered-text">
-         <h2 class="h2-picture">מנות צהריים</h2>
-          <% @favorints_product.each do |p| %>
+         <h2 class="h2-picture">מנות צהריים</h2>          
+           <%@favorints_product.each do |p| %>
              <div style="height: 150px; border-bottom: 1px solid #E0DAC1; padding-top:15px;">
                <%= image_tag get_picture_link(p.pictures), class: "img-thumbnail pull-left img-box", style: "width:150px; height:110px" %>         
                <p><strong><%= p.name %></strong></p>
                <p><%= p.overview %></p>
                <p><%=link_to "פרטים", product_show_path(id: p.id), class: "button"%></p>
              </div>
-          <%end%>           
+          <%end%>                   
     </div>
    </div>
 </div>

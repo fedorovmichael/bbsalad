@@ -7,13 +7,16 @@ class ProductController < ApplicationController
       @productTypes = ProductType.all
       
       @productTypes.each do |type|
-         @products = Product.where('product_type = ?', type.name)
+         @products = Product.where(['product_type = ? and enable = ?', type.name, true])
          if !@products.blank?
             type_name = page_caption(type.name)
             @hashTypes[type_name] = @products
             @current_caption = type_name
          end
       end
+      
+      @productDescription = "טוסטים,המבורגר טבעוני,סלטים בהרכבה עצמית,סלטים,כריכים,מרקים,צמחוני,קייטרינג,מגש סלמון,מגש גבינות,מגש ירקות,מגש כריכים,כריכים בהרכבה עצמית"
+      @productTitle = "טוסטים,המבורגר טבעוני,סלטים בהרכבה עצמית,סלטים,כריכים,מרקים,צמחוני,כריכים בהרכבה עצמית - לה צ'יפולה"
       
       #@products = Product.where('product_type = ?',params[:product_type])
       #@products = @products.includes(:pictures)      
@@ -24,7 +27,8 @@ class ProductController < ApplicationController
 
   def show
       @product = Product.find(params[:id])
-      
+      @productDescription = @product.overview
+      @productTitle = @product.name + " - לה צ'יפולה"
       #if @product.pictures.empty?         
        #  @product.pictures << create_picture
       #end
@@ -74,7 +78,11 @@ class ProductController < ApplicationController
       when 'bigsalad'
         current_type = 'סלטים גדולים'
       when 'business'
-        current_type = 'עסקיות'
+        current_type = 'עסקיות'      
+      when 'hot'
+        current_type = 'מנות מיוחדות'
+      when 'catering'
+        current_type = 'קייטרינג'
       end
       
       current_type
