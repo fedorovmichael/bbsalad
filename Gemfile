@@ -60,7 +60,7 @@ end
 
 group :production do
    # PostgreSQL
-   gem 'pg', '~> 0.20'
+   gem 'pg', '0.20'
    gem 'rails_12factor'
    # Use Unicorn as the app server
    gem 'unicorn'   
