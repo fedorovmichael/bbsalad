@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html style="direction:rtl;">
 <head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="user-scalable=no, width=device-width, maximum-scale=1, minimum-scale=1">
   <title><%= @productTitle %></title>
   
   <meta name="KeyWords" content="סלטים,כריכים,מרקים,שקשוקה,טוסטים,המבורגר צמחוני תל אביב,טבעוני,צמחוני,אוכל בריא,מסעדות,בר סלטים,ארוחת צהריים,ביזנס לאנצ,לזניה"/>
@@ -13,8 +15,9 @@
   <%= csrf_meta_tags %>  
 </head>
 <body>
+   <div id='bgDiv' style="display:none;"></div>
 <%= render 'layouts/header'%>
-<div id="divContant" class="container">
+<div id="divContant" class="container-fluid" >
    <%= yield %>
 </div>
 <%= render 'layouts/footer' %>

@@ -1,10 +1,352 @@
 <script>
-   $('.cycle-slideshow').cycle();   
+   $('.cycle-slideshow').cycle();
+   function scrollToSection(secId) {      
+      let elPosition = ($("#" + secId).offset().top) - 150;      
+      $('html, body').animate({scrollTop: elPosition }, 2000);
+   }   
 </script>
+
+
+<div class="simg1">   
+</div>
+<section>
+   <h1 class="mb-40">מה בתפריט ?</h1>
+   <ul class="flex-container-firs-sec wrap">
+      <li>
+         <a href="javascript:scrollToSection('sSalad')" title="סלטים">
+            <div class="top-card-name">
+               <span>סלטים</span>
+            </div>
+            <div class="card">
+               <img src="/assets/card-salad.jpg" class="card-img-top" alt="סלטים">
+            </div>            
+         </a>
+      </li>
+      <li>
+         <a href="javascript:scrollToSection('sSandwich')" title="כריכים">
+            <div class="top-card-name">
+               <span>כריכים</span>
+            </div>
+            <div class="card">
+               <img src="/assets/card-sandwich1.jpg" class="card-img-top" alt="כריכים">
+            </div>
+         </a>
+      </li>
+      <li>
+         <a href="javascript:scrollToSection('sSandwich')" title="טוסטים">
+            <div class="top-card-name">
+               <span>טוסטים</span>
+            </div>
+            <div class="card">
+               <img src="/assets/card-toast.jpg" class="card-img-top" alt="טוסטים">
+            </div>
+         </a>
+      </li>
+      <li>
+         <a href="javascript:scrollToSection('sSoup')" title="מרקים">
+            <div class="top-card-name">
+               <span>מרקים</span>
+            </div>
+            <div class="card">
+               <img src="/assets/soup.jpg" class="card-img-top" alt="מרקים">
+            </div>
+         </a>
+      </li>
+      <li>
+         <a href="javascript:scrollToSection('sHotDishes')" title="מנות חמות">
+            <div class="top-card-name">
+               <span>מנות חמות</span>
+            </div>
+            <div class="card">
+               <img src="/assets/card-hot-dishes.jpg" class="card-img-top" alt="מנות חמות">
+            </div>
+         </a>
+      </li>
+      <li>
+         <a href="javascript:scrollToSection('sOfficeDishes')" title="מנות לאירועים">
+            <div class="top-card-name">
+               <span>מנות לאירועים</span>
+            </div>
+            <div class="card">
+               <img src="/assets/office_dishes.png" class="card-img-top" alt="מנות לאירועים">
+            </div>
+         </a>
+      </li>
+      <li>
+         <a href="javascript:scrollToSection('sDrinks')" title="מיץ תפוזים/גזר">
+            <div class="top-card-name">
+               <span>מיץ תפוזים / גזר</span>
+            </div>
+            <div class="card">
+               <img src="/assets/card-juice.jpg" class="card-img-top" alt="מיץ תפוזים/גזר">
+            </div>
+         </a>
+      </li>
+   </ul>
+ </section>  
+<div class="simg2">
+   <div class="sbox2">
+      סלטים
+   </div>
+</div>
+<section id="sSalad" name="sSalad">
+  <h1>סלט בהרכבה עצמי</h1>  
+   <div class="row mb-60 salad-main-row">
+      
+      <div class="col-md-2">
+         <h3 class="text-center">רטבים לסלט</h3>
+         <div class="d-flex justify-content-center">
+            <ul class="text-right ul-salad-ingredients fs-20">
+               <li>טחינה</li>
+               <li>שום</li>
+               <li>אלף האיים</li>
+               <li>שמן זית</li>
+               <li>לימון</li>
+               <li>ויניגרט</li>
+               <li>פסטו</li>
+               <li>בלסמי</li>           
+            </ul>
+         </div>
+      </div>
+      <div class="col-md-2">
+         <h3 class="text-center">תוספות לסלט</h3>
+         <div class="d-flex justify-content-center">
+            <ul class="text-right ul-salad-ingredients fs-20">
+               <li><span class="addition-to-dishes-span-name">ביצה</span><span>- 4ש"ח</span></li>
+               <li><span class="addition-to-dishes-span-name">טונה</span><span>- 4ש"ח</span></li>
+               <li><span class="addition-to-dishes-span-name">בולגרית</span><span>- 4ש"ח</span></li>               
+               <li><span class="addition-to-dishes-span-name">טופו</span><span>- 4ש"ח</span></li>
+               <li><span class="addition-to-dishes-span-name">עוף</span><span>- 10ש"ח</span></li>
+               <li><span class="addition-to-dishes-span-name">סייטן</span><span>- 10ש"ח</span></li>
+            </ul>
+         </div>
+      </div>
+      <div class="col-md-4">
+         <h3 class="h3-salad-ingredients">מרכבים לסלט</h3>
+         <div class="d-flex justify-content-sa">
+         <ul class="text-right ul-salad-ingredients fs-20">
+            <li>גרגרי חומוס</li>
+            <li>בצל</li>
+            <li>תפוח אדמה</li>
+            <li>פסטה</li>
+            <li>בטטה</li>
+            <li>חציל כלוי</li>
+            <li>פלפל חריף</li>
+            <li>עדשים</li>
+            <li>בורגול</li>
+            <li>כוסמת</li>
+            <li>קינואה</li>
+            <li>קרוטונים</li>
+            <li>חמוציות</li>
+            <li>פלפל כלוי</li>
+            <li>ג'אלה</li>   
+         </ul>         
+         <ul class="text-right ul-salad-ingredients fs-20">
+            <li>עגבניה</li>
+            <li>מלפפון</li>
+            <li>גזר</li>
+            <li>חסה</li>
+            <li>כרוב</li>
+            <li>סלק טרי/מבושל</li>
+            <li>גמבה</li>
+            <li>מלפפון חמוץ</li>
+            <li>נבטים</li>
+            <li>בצל ירוק</li>
+            <li>פטריות</li>
+            <li>פטרוזיליה</li>
+            <li>שעועית ירוקה</li>
+            <li>תירס</li>
+            <li>אפונה</li>                   
+            </ul>
+         </div>
+      </div>
+      <div class="col-md-4">
+         <h3 class="salad-head-price-h3">מחיר לסלט</h3> 
+         <ul class="media-list salad-price-ul">            
+            <li class="media salad-price-li">
+               <div class="salad-price-media">
+                  <a href="#"><img class="media-object h-100-hr-80" src="/assets/salad-general.png" alt="סלט גדול"> </a>
+               </div>
+               <div class="media-body salad-price-text">
+                  <span class="media-heading fs-20">סלט גדול - 30ש"ח</span>                 
+               </div>
+            </li>
+            <li class="media salad-price-li">
+               <div class="salad-price-media">
+                  <a href="#"><img class="media-object h-90-hr-70" src="/assets/salad-general.png" alt="סלט גדול"> </a>
+               </div>
+               <div class="media-body salad-price-text">
+                  <span class="media-heading fs-20">סלט קטן - 20ש"ח</span>               
+               </div>
+            </li>
+            <li class="media salad-price-li">
+               <div class="salad-price-media">
+                  <a href="#"><img class="media-object h-80-hr-60" src="/assets/salad-general.png" alt="סלט גדול"> </a>
+               </div>
+               <div class="media-body salad-price-text">
+                  <span class="media-heading fs-20">סלט אישי - 11ש"ח</span>                 
+               </div>
+            </li>
+         </ul>
+      </div>
+   </div>  
+</section>
+<div class="simg3">
+   <div class="sbox3">
+      כריכים, טוסטים
+   </div>
+</div>
+<section id="sSandwich">
+  <h1>כריכים, טוסטים</h1> 
+   <ul class="flex-container-firs-sec wrap">
+      <li>
+         <h3 class="salad-head-price-h3">מחיר לטוסט/כריך</h3>
+         <ul class="ul-sandwich-price">
+            <li class="li-sandwich-price">
+               <div class="media-left1 ul-sandwich-div-img">
+                  <a href="#"><img class="media-object" src="/assets/sandwich-r311.png" alt="כריך"> </a>
+               </div>
+               <div >
+                  <ul class="ul-sandwich-list">
+                     <li><span class="media-heading span-sandwich-price fs-20">כריך בהרכבה עצמית (מגיע עם שתי תוספות) - 25ש"ח</span></li>
+                     <li><span class="media-heading fs-20">כריך סלמון - 35ש"ח</span></li>                     
+                     <li><span class="media-heading fs-20">כריך שווארמה סטיין - 30ש"ח</span></li>
+                     <li><span class="media-heading fs-20">כריך חביתה - 25ש"ח</span></li>
+                     <li></li>
+                  </ul>
+               </div>
+            </li>
+            <li class="li-sandwich-price">
+               <div class="media-left1 ul-sandwich-div-img">
+                  <a href="#"><img class="mx-auto" src="/assets/toast-art.png" alt="טוסט"> </a>
+               </div>
+               <div >
+                  <span class="media-heading fs-20 span-sandwich-price"> טוסט בהרכבה עצמית (מגיע עם שתי תוספות) - 25ש"ח</span>                 
+               </div>
+            </li>           
+         </ul>
+      </li>
+      <li>
+         <h3 class="text-center">תוספות לכריך/טוסט</h3>
+         <ul class="text-right1 fs-20 ul-sandwich-addions">
+            <li><span class="addition-to-toast-span-name">ביצה</span><span>- 4ש"ח</span></li>
+            <li><span class="addition-to-toast-span-name">טונה</span><span>- 4ש"ח</span></li>
+            <li><span class="addition-to-toast-span-name">בולגרית</span><span>- 4ש"ח</span></li>
+            <li><span class="addition-to-toast-span-name">חביתה</span><span>- 4ש"ח</span></li>             
+            <li><span class="addition-to-toast-span-name">טופו</span><span>- 4ש"ח</span></li>
+            <li><span class="addition-to-toast-span-name">שמנת</span><span>- 4ש"ח</span></li>
+            <li><span class="addition-to-toast-span-name">גבינה צהובה</span><span>- 4ש"ח</span></li>
+            <li><span class="addition-to-toast-span-name">עוף</span><span>- 10ש"ח</span></li>
+            <li><span class="addition-to-toast-span-name">סייטן</span><span>- 10ש"ח</span></li>
+            <li><span class="addition-to-toast-span-name">סלמון</span><span>- 10ש"ח</span></li>
+         </ul>
+      </li>
+      <li>
+        <h3 class="text-center">ירקות לכריך/טוסט</h3>
+            <ul class="text-right ul-salad-ingredients ls-disc fs-20">
+               <li>בצל</li>
+               <li>עגבניה</li>
+               <li>מלפפון</li>
+               <li>חסה</li>
+               <li>זיתים</li>
+               <li>פלפל חריף</li>
+               <li>מלפפון חמוץ</li>
+               <li>תירס</li>           
+            </ul>
+      </li>
+      <li>
+         <h3 class="text-center">רטבים לכריך/טוסט</h3>         
+            <ul class="text-right ul-salad-ingredients ls-disc fs-20">
+               <li>טחינה</li>
+               <li>שום</li>
+               <li>אלף האיים</li>
+               <li>צ'ילי מתוק</li>
+               <li>סחוג</li>
+               <li>שמנת</li>
+               <li>פסטו</li>
+            </ul>
+      </li>
+   </ul>     
+</section>
+<div class="simg4">
+   <div class="sbox4">
+       מנות חמות
+   </div>
+</div>
+<section id="sHotDishes">
+   <h1> מנות חמות</h1>
+   <div class="slider-container">
+   <div class="cycle-slideshow hot-dishes-slider" data-cycle-timeout=4000>  
+    <% get_slideshow_pictures.each do |p| %>
+      <%= image_tag p.link, :width => "100%", :height => "100%" %>         
+    <%end%>
+   </div>
+   </div>
+</section>
+<div class="simg5">
+   <div class="sbox5">
+       קייטרינג
+   </div>
+</div>
+<section id="sOfficeDishes">
+   <h1>קייטרינג</h1>  
+   <ul class="d-flex ls-none fw-wrap">
+      <% @catering_product.each do |o|%>
+         <li class="li-meatballs">
+            <div class="li-meatballs-img">
+               <%= image_tag get_picture_link(o.pictures), class: ""%>               
+            </div>
+            <div>
+               <h3 class="li-meatballs-title"><%= o.name %></h3>
+               <p class="li-meatballs-text"><%= o.overview %></p>
+               <p class="li-meatballs-price"><%= o.price %><span>ש"ח</span></p>
+            </div>
+         </li>
+      <%end%>
+   </ul>
+</section>
+<div class="simg6">
+   <div class="sbox6">
+       שתיה
+   </div>
+</div>
+<section id="sDrinks">
+   <h1>שתיה</h1>
+   <ul class="d-flex ls-none fw-wrap justify-content-center">     
+      <li class="">
+         <div class="d-flex fw-wrap">
+            <div class="card-juice-container d-flex">
+               <span>מיץ תפוזים</span>
+               <img src="/assets/card-orange-juice.jpg" alt="מיץ תפוזים"/>
+            </div>
+            <div class="card-juice-container d-flex">
+               <span>מיץ גזר</span>
+               <img src="/assets/card-carrot-juice.jpg" alt="מיץ גזר"/>
+            </div>
+         </div>         
+      </li>
+      <li>
+         <ul class="ul-drinks-list">
+            <li>קולה פחית </li>
+            <li>קולה פחיות זירו</li>
+            <li>קולה פחיות דיאט</li>
+            <li>ספרייט זירו פחיות</li>
+            <li>מים קטן בקבוק 0.5</li>
+            <li>פיוז טי בקבוק 0.5</li>
+            <li>סודה קטן 250</li>
+            <li>בירה שחורה בקבוק 0.33</li>
+            <li>קוקה קולה זירו בקבוק 1.5</li>
+            <li>מים בקבוק 1.5</li>
+         </ul>
+      </li>
+   </ul>
+</section>
+
+
 
 <div class="span12 centered-text" style="height:100%;">
 <div class="row">
-   <div class="cycle-slideshow" style="margin: 0 auto; text-align: center; border: 5px solid #FFF; width:100%; height:600px; padding:5px;"   
+   <div class="cycle-slideshow" style="margin: 0 auto; text-align: center; border: 5px solid #FFF; width:100%; height:600px; padding:5px; display:none;"   
     data-cycle-timeout=4000>
     <% get_slideshow_pictures.each do |p| %>
       <%= image_tag p.link, :width => "100%", :height => "100%" %>         
@@ -12,7 +354,7 @@
    </div>
    </div>
 </div>
-<div class="container marketing" style="margin-top: 30px;">
+<div class="container marketing" style="margin-top: 30px; display:none;">
    <div class="row">
       <div class="col-md-6 centered-text">
          <h2 class="h2-picture">מנות חדשות</h2>

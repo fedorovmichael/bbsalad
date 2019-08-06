@@ -3,6 +3,7 @@ class HomeController < ApplicationController
 
       @new_product =  Product.order(:product_type).includes(:pictures).where("new = ?", true)
       @favorints_product =  Product.order(:product_type).includes(:pictures).where("favorits = ?", true)
+      @catering_product = Product.includes(:pictures).where(['product_type = ? and enable = ?', 'catering', true])
       @productDescription = "טוסטים,המבורגר טבעוני,סלטים בהרכבה עצמית,סלטים,כריכים,מרקים,צמחוני,כריכים בהרכבה עצמית"
       @productTitle = "טוסטים,המבורגר טבעוני,סלטים בהרכבה עצמית,סלטים,כריכים,מרקים,צמחוני,כריכים בהרכבה עצמית - לה צ'יפולה"
       render 'index'
