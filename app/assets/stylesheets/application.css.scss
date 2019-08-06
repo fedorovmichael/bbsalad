@@ -401,11 +401,11 @@ section{
 }
 
 .simg2{
-   background-image: url(asset_path('/assets/bg-salad.jpg'));   
+   background-image: image-url('/assets/bg-salad.jpg');   
 }
 
 .simg3{
-   background-image: url(asset_path('/assets/bg-toast-sandwich.jpg'));   
+   background-image: url(image-path('/assets/bg-toast-sandwich.jpg'));
 }
 
 .simg4{
