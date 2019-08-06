@@ -396,28 +396,28 @@ section{
 }
 
 .simg1{
-   background-image: url(/assets/20190311_105114.jpg); 
+   background-image: url(asset_path('/assets/20190311_105114.jpg')); 
    height: 100vh; 
 }
 
 .simg2{
-   background-image: url(/assets/bg-salad.jpg);   
+   background-image: url(asset_path('/assets/bg-salad.jpg'));   
 }
 
 .simg3{
-   background-image: url(/assets/bg-toast-sandwich.jpg);   
+   background-image: url(asset_path('/assets/bg-toast-sandwich.jpg'));   
 }
 
 .simg4{
-   background-image: url(/assets/bg-hot-dishes.jpg);   
+   background-image: url(asset_path('/assets/bg-hot-dishes.jpg'));   
 }
 
 .simg5{
-   background-image: url(/assets/office_dishes.jpg);   
+   background-image: url(asset_path('/assets/office_dishes.jpg'));   
 }
 
 .simg6{
-   background-image: url(/assets/bg-juice.jpg);   
+   background-image: url(asset_path('/assets/bg-juice.jpg'));   
 }
 
 .sbox1{
